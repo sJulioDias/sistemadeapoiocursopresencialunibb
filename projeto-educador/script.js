@@ -1,0 +1,165 @@
+const form = document.getElementById("mensagemForm");
+const resultado = document.getElementById("resultado");
+const cartao = document.getElementById("cartao");
+
+// Função auxiliar para pegar valor de input/textarea
+function value(id) {
+    return document.getElementById(id).value;
+}
+
+// Função para formatar data ISO (YYYY-MM-DD) em DD/MM/AAAA
+function formatarDataISOparaBR(dataISO) {
+    if (!dataISO) return "";
+    const [ano, mes, dia] = dataISO.split("-");
+    return `${dia}/${mes}/${ano}`;
+}
+
+// INPUT COLOR PARA PERSONALIZAÇÃO
+const colorPicker = document.getElementById("colorPicker");
+
+colorPicker.addEventListener("input", () => {
+    const corEscolhida = colorPicker.value;
+    cartao.style.background = corEscolhida;
+});
+
+// Função auxiliar para preencher texto em spans/divs
+function text(id, value) {
+    document.getElementById(id).textContent = value;
+}
+
+// SUBMISSÃO DO FORMULÁRIO
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nome = value("nome");
+    const curso = value("curso");
+    const dia = value("dia");
+    const diaPrevio = value("diaPrevio");
+    const datasEvento = value("datasEvento");
+    const enderecoSala = value("enderecoSala");
+    const cidadeUf = value("cidadeUf");
+    const codigoFip = value("codigoFip");
+
+    // Concatena endereço e cidade/UF
+    const localConcatenado = `${enderecoSala} - ${cidadeUf}`;
+
+    // Preenche os campos do cartão com datas formatadas
+    text("nomeSpan", nome);
+    text("cursoSpan", curso);
+    text("diaSpan", formatarDataISOparaBR(dia));
+    text("cursoBox", curso);
+    text("diaPrevioBox", formatarDataISOparaBR(diaPrevio));
+    text("datasEventoBox", datasEvento);
+    text("localEventoBox", localConcatenado);
+    text("codigoFipBox", codigoFip);
+
+    // Gera conteúdo de e-mail e descrição acessível
+    gerarEmail(curso, formatarDataISOparaBR(dia), datasEvento, localConcatenado, codigoFip, cidadeUf);
+    gerarDescricao(nome, curso, formatarDataISOparaBR(dia), formatarDataISOparaBR(diaPrevio), datasEvento, localConcatenado, codigoFip);
+
+    resultado.classList.remove("hidden");
+    resultado.scrollIntoView({ behavior: "smooth" });
+});
+
+// BOTÃO PARA GERAR IMAGEM
+const btnImagem = document.getElementById("btnImagem");
+btnImagem.addEventListener("click", () => {
+    const estiloAtual = window.getComputedStyle(cartao);
+    const corDeFundo = estiloAtual.backgroundColor || estiloAtual.backgroundImage;
+
+    html2canvas(cartao, {
+        scale: 2,
+        backgroundColor: corDeFundo 
+    }).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "cartao-unibb.jpg";
+        link.href = canvas.toDataURL("image/jpeg", 0.95);
+        link.click();
+    });
+});
+
+// BOTÃO PARA COPIAR TEXTO DO EMAIL
+const btnCopiarEmail = document.getElementById("btnCopiarEmail");
+btnCopiarEmail.addEventListener("click", () => {
+    const emailTexto = document.getElementById("descricaoImagem").value;
+    navigator.clipboard.writeText(emailTexto).then(() => {
+        alert("Texto do e-mail copiado para a área de transferência!");
+    }).catch(err => {
+        console.error("Erro ao copiar texto: ", err);
+    });
+});
+
+// BOTÃO PARA ALTERAR COR DO CARTÃO
+const btnAlterarCor = document.getElementById("btnAlterarCor");
+const cores = [
+    "linear-gradient(160deg, #2c3e50, #000000)", 
+    "linear-gradient(160deg, #102a43, #243b55)", 
+    "linear-gradient(160deg, #0d324d, #1c1c1c)", 
+    "linear-gradient(160deg, #bdc3c7, #2c3e50)"  
+];
+let indiceCor = 0;
+
+btnAlterarCor.addEventListener("click", () => {
+    indiceCor = (indiceCor + 1) % cores.length;
+    cartao.style.background = cores[indiceCor];
+});
+
+// FUNÇÃO PARA GERAR TÍTULO DO EMAIL (agora inclui cidade/UF)
+function gerarEmail(curso, dia, datasEvento, localConcatenado, codigoFip, cidadeUf) {
+    document.getElementById("emailCorpo").value = `
+Educador/a - Convite Atuação Curso ${curso} - ${cidadeUf} - Responder até ${dia}
+`.trim();
+}
+
+// FUNÇÃO PARA GERAR DESCRIÇÃO DA IMAGEM (ACESSIBILIDADE)
+function gerarDescricao(nome, curso, dia, diaPrevio, datasEvento, localConcatenado, codigoFip) {
+    document.getElementById("descricaoImagem").value = `
+#Paratodosverem
+Cartão digital UniBB com informações de curso e instruções.
+
+Olá, ${nome}!
+
+Recebemos sua manifestação de interesse e validamos sua atuação como educador/a titular no curso "${curso}".
+A autorização da atuação deve ser liberada pelo/a Gestor/a no Portal do Aluno, aba Gestor.
+
+📅 Dia limite para autorização: ${dia}
+📅 Dia prévio: ${diaPrevio}
+📅 Datas e horários do evento: ${datasEvento}
+📍 Local: ${localConcatenado}
+📌 Código FIP/Ponto Eletrônico: ${codigoFip}
+
+- Ausência deve ser registrada e despachada na Plataforma BB.
+- Registro: Plataforma BB > Pessoas > Minha Visão > Ausências e Afastamentos > Planejamento de Ausências > Adicionar Ausência > Motivo: EDUCADOR – DIPES
+- Despacho: Plataforma BB > Pessoas > Minha Visão > Ausências e Afastamentos > Planejamento de Ausências
+
+Caso tenha necessidade de deslocamento e hospedagem, acesse o card em anexo para orientações.
+
+Atenciosamente,
+Gepes Especializada Educação e Seleção
+
+`.trim();
+}
+
+const btnEmail = document.getElementById("btnEmail");
+
+btnEmail.addEventListener("click", () => {
+    html2canvas(cartao, { scale: 2 }).then(canvas => {
+        canvas.toBlob(blob => {
+            const item = new ClipboardItem({ "image/png": blob });
+
+            navigator.clipboard.write([item]).then(() => {
+                alert("Imagem copiada! Agora cole no corpo do e-mail.");
+
+                const assunto = document.getElementById("emailCorpo").value || "Comunicado UniBB";
+                const corpo = document.getElementById("descricaoImagem").value || "Segue comunicado em anexo.";
+
+                const mailtoLink = `mailto:?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+                window.location.href = mailtoLink;
+
+            }).catch(err => {
+                console.error("Erro ao copiar imagem: ", err);
+                alert("Não foi possível copiar a imagem automaticamente.");
+            });
+        });
+    });
+});
