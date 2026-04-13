@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Comunicados UniBB</title>
+    <style>
+        body {
+            background: linear-gradient(160deg, #022c4a, #04324f);
+            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 { margin-bottom: 40px; text-align: center; font-weight: 300; font-weight: bold;}
+        .container {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            color: #022c4a;
+            padding: 30px;
+            border-radius: 15px;
+            width: 280px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+            background: #f6f632;
+        }
+        .card h2 { font-size: 1.3rem; margin: 0 0 15px 0; color: #022c4a; }
+        .card p { font-size: 0.95rem; color: #444; line-height: 1.4; }
+        .icon { font-size: 40px; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <h1>Sistema de Apoio - Cursos Presenciais UniBB</h1>
+
+    <div class="container">
+        <a href="projeto-participante/index.html" class="card">
+            <div class="icon">🎓</div>
+            <h2>Confirmação Participante</h2>
+            <p>Gerar cartão de confirmação para alunos de cursos presenciais.</p>
+        </a>
+
+        <a href="projeto-educador/index.html" class="card">
+            <div class="icon">👨‍🏫</div>
+            <h2>Confirmação Educador/a</h2>
+            <p>Gerar comunicado para atuação de educadores titulares.</p>
+        </a>
+
+        <a href="projeto-porta/index.html" class="card">
+            <div class="icon">🚪</div>
+            <h2>Identificação de Porta</h2>
+            <p>Gerar placa de boas-vindas e identificação para salas de aula.</p>
+        </a>
+    </div>
+
+</body>
+</html>
