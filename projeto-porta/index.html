@@ -5,17 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Identificação de Porta - UniBB</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Biblioteca para conversão em imagem -->
     <script src="https://cloudflare.com"></script>
 </head>
 <body>
 
-<!-- Botão Voltar ao Menu na tela inicial -->
-<a href="../index.html" class="btn-voltar2 btn-topo"> <!-- Adicione btn-topo aqui -->
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z""")/>>
-    </svg>
-    Voltar ao Menu
-</a>
     <!-- TELA DO FORMULÁRIO -->
     <div id="setup-form" class="form-container">
         <h2 class="form-title">Gerar Identificação de Porta</h2>
@@ -63,12 +57,6 @@
             <button class="btn-voltar" onclick="voltar()">Alterar</button>
             <button class="btn-download" onclick="baixarImagem()">Baixar Imagem (JPG)</button>
             <button class="btn-download" onclick="baixarPDF()">Baixar PDF</button>
-            <a href="../index.html" class="btn-voltar2">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                </svg>
-                Voltar ao Menu
-            </a>
         </div>
     </div>
 
@@ -76,4 +64,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
+<a href="../index.html" class="btn-voltar2">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z""")/>>
+    </svg>
+    Voltar ao Menu
+</a>
 </html>
