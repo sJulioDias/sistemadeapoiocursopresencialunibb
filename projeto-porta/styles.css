@@ -66,6 +66,13 @@ input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; 
     color: #1a3355;
 }
 
+/* Versão menor do botão na tela inicial */
+body > .btn-voltar2 {
+    font-size: 12px;
+    padding: 8px 16px;
+    margin-bottom: 20px; /* dá um respiro antes do formulário */
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
     .botoes-acao {
