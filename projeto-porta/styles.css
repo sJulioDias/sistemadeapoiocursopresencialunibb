@@ -25,48 +25,73 @@ input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; 
 }
 
 /* Design do Card */
-#card-resultado { flex-direction: column; align-items: center; }
+#card-resultado { 
+    display: none; 
+    flex-direction: column; 
+    align-items: center; 
+}
 
 .card { 
-    width: 900px; min-height: 500px; background: white; 
-    display: flex; flex-direction: column; color: #1a3355;
+    width: 900px; 
+    min-height: 500px; 
+    background: white; 
+    display: flex; 
+    flex-direction: column; 
+    color: #1a3355;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .content-card { flex: 1; padding: 20px 80px; }
 .content-card h1 { font-size: 42px; font-weight: 400; margin-bottom: 30px; }
 .info-item { font-size: 22px; margin-bottom: 8px; line-height: 1.2; }
-.educadores-list { margin-left: 175px; margin-top: 2px; }
 .msg-final { margin-top: 30px; font-weight: 400; font-size: 32px; }
 
-.botoes-acao { display: flex; gap: 15px; margin-top: 30px; }
-.btn-download { background: #28a745; color: white; border: none; padding: 12px 25px; cursor: pointer; font-weight: bold; border-radius: 4px; }
-.btn-voltar { background: #666; color: white; border: none; padding: 12px 25px; cursor: pointer; border-radius: 4px; }
-
-.educadores-dupla {
-    display: flex;
-    gap: 20px;
-    font-size: 22px;
-    margin-bottom: 8px;
-    line-height: 1.2;
+/* Botões de Ação na Área Inferior */
+.botoes-acao { 
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; 
+    margin-top: 30px; 
 }
 
+.btn-download { 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 12px 25px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    border-radius: 4px; 
+    font-size: 14px;
+}
+
+.btn-voltar { 
+    background: #666; 
+    color: white; 
+    border: none; 
+    padding: 12px 25px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Novo estilo do Botão Voltar ao Menu (Agora relativo) */
 .btn-voltar2 {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
-    padding: 8px 12px;
+    padding: 12px 25px;
     border: 1px solid #f6f632;
-    border-radius: 8px;
+    border-radius: 4px;
     transition: all 0.3s ease;
     background: #1a3355;
-    z-index: 100; /* Garante que fique acima de tudo */
+    box-sizing: border-box;
 }
 
 .btn-voltar2:hover {
@@ -74,13 +99,8 @@ input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; 
     color: #1a3355;
 }
 
-/* Esconde o botão na hora de gerar o formulário no mobile se necessário */
-@media (max-width: 600px) {
-    .btn-voltar2 {
-        position: relative;
-        top: 0;
-        left: 0;
-        margin-bottom: 20px;
-        display: inline-flex;
-    }
+/* Ajustes auxiliares para a imagem de footer dentro do card */
+.content-card img {
+    max-width: 100%;
+    margin-top: 20px;
 }
