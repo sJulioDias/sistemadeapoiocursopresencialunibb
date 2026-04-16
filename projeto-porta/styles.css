@@ -38,54 +38,49 @@ input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; 
 .educadores-list { margin-left: 175px; margin-top: 2px; }
 .msg-final { margin-top: 30px; font-weight: 400; font-size: 32px; }
 
-.botoes-acao { 
-    display: flex; 
-    gap: 15px; 
-    margin-top: 30px; 
-    flex-wrap: wrap; /* garante que não quebre em telas menores */
+.botoes-acao { display: flex; gap: 15px; margin-top: 30px; }
+.btn-download { background: #28a745; color: white; border: none; padding: 12px 25px; cursor: pointer; font-weight: bold; border-radius: 4px; }
+.btn-voltar { background: #666; color: white; border: none; padding: 12px 25px; cursor: pointer; border-radius: 4px; }
+
+.educadores-dupla {
+    display: flex;
+    gap: 20px;
+    font-size: 22px;
+    margin-bottom: 8px;
+    line-height: 1.2;
 }
 
-.btn-download, .btn-voltar, .btn-voltar2 { 
-    padding: 12px 25px; 
-    cursor: pointer; 
-    font-weight: bold; 
-    border-radius: 4px; 
-    border: none; 
-    display: flex; 
-    align-items: center; 
+.btn-voltar2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
     gap: 8px;
+    color: white;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 1px solid #f6f632;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #1a3355;
+    z-index: 100; /* Garante que fique acima de tudo */
 }
-
-.btn-download { background: #28a745; color: white; }
-.btn-voltar { background: #666; color: white; }
-.btn-voltar2 { background: #1a3355; color: white; font-size: 14px; }
 
 .btn-voltar2:hover {
     background: #f6f632;
     color: #1a3355;
 }
 
-/* Versão menor do botão na tela inicial */
-/* Botão específico do topo da tela inicial */
-.btn-topo {
-    display: inline-flex; /* Faz o botão ocupar apenas o tamanho do texto */
-    width: fit-content;
-    font-size: 12px;
-    padding: 6px 12px;
-    margin-bottom: 10px;
-}
-
-/* Ajuste o ícone dentro dele para acompanhar o tamanho */
-.btn-topo svg {
-    width: 14px;
-    height: 14px;
-}
-
-/* Responsividade */
+/* Esconde o botão na hora de gerar o formulário no mobile se necessário */
 @media (max-width: 600px) {
-    .botoes-acao {
-        flex-direction: column;
-        align-items: stretch;
+    .btn-voltar2 {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+        display: inline-flex;
     }
 }
