@@ -67,10 +67,19 @@ input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; 
 }
 
 /* Versão menor do botão na tela inicial */
-body > .btn-voltar2 {
+/* Botão específico do topo da tela inicial */
+.btn-topo {
+    display: inline-flex; /* Faz o botão ocupar apenas o tamanho do texto */
+    width: fit-content;
     font-size: 12px;
-    padding: 8px 16px;
-    margin-bottom: 20px; /* dá um respiro antes do formulário */
+    padding: 6px 12px;
+    margin-bottom: 10px;
+}
+
+/* Ajuste o ícone dentro dele para acompanhar o tamanho */
+.btn-topo svg {
+    width: 14px;
+    height: 14px;
 }
 
 /* Responsividade */
