@@ -7,23 +7,40 @@ document.getElementById('form-card').addEventListener('submit', function(e) {
     const ed2 = document.getElementById('in-ed2').value;
     const data = document.getElementById('in-data').value;
     const horario = document.getElementById('in-horario').value;
+    const genero = document.getElementById('in-genero').value;
 
     // Injetar no card
     document.getElementById('out-curso').innerText = curso;
 
     const containerEd2 = document.getElementById('container-ed2');
     const outEd1 = document.getElementById('out-ed1');
-    const labelEducadores = document.querySelector("#out-ed1").previousElementSibling; 
-    // pega o <strong> que está antes do span out-ed1
+    const labelEducadores = document.getElementById('label-educadores');
+
+    // Ajuste de gênero
+    let labelSingular = "Educador/a";
+    let labelPlural = "Educadores/as";
+
+    if (genero === "feminino") {
+        labelSingular = "Educadora";
+        labelPlural = "Educadoras";
+        document.querySelector("label[for='in-ed1']").innerText = "Primeira Educadora *";
+        document.querySelector("label[for='in-ed2']").innerText = "Segunda Educadora (Opcional)";
+    } else if (genero === "masculino") {
+        labelSingular = "Educador";
+        labelPlural = "Educadores";
+        document.querySelector("label[for='in-ed1']").innerText = "Primeiro Educador *";
+        document.querySelector("label[for='in-ed2']").innerText = "Segundo Educador (Opcional)";
+    } else {
+        document.querySelector("label[for='in-ed1']").innerText = "Primeiro Educador/a *";
+        document.querySelector("label[for='in-ed2']").innerText = "Segundo Educador/a (Opcional)";
+    }
 
     if(ed2.trim() !== "") {
-        // Dois educadores → concatenados com "e"
-        labelEducadores.innerText = "Educadores/as:";
+        labelEducadores.innerText = labelPlural + ":";
         outEd1.innerText = `${ed1.toUpperCase()} e ${ed2.toUpperCase()}`;
-        containerEd2.innerHTML = ""; // não precisamos mais de container separado
+        containerEd2.innerHTML = "";
     } else {
-        // Apenas um educador
-        labelEducadores.innerText = "Educador/a:";
+        labelEducadores.innerText = labelSingular + ":";
         outEd1.innerText = ed1.toUpperCase();
         containerEd2.innerHTML = "";
     }
@@ -59,7 +76,7 @@ function baixarImagem() {
     });
 }
 
-// Função baixar PDF (paisagem)
+// Função baixar PDF
 function baixarPDF() {
     const card = document.getElementById('capture-area');
 
@@ -74,10 +91,14 @@ function baixarPDF() {
         const pdf = new jsPDF("landscape", "pt", "a4");
 
         const pageWidth = pdf.internal.pageSize.getWidth();
-        const imgWidth = pageWidth;
-        const imgHeight = canvas.height * pageWidth / canvas.width;
+        const pageHeight = pdf.internal.pageSize.getHeight();
+        const ratio = Math.min(pageWidth / canvas.width, pageHeight / canvas.height);
+        const imgWidth = canvas.width * ratio;
+        const imgHeight = canvas.height * ratio;
+        const x = (pageWidth - imgWidth) / 2;
+        const y = (pageHeight - imgHeight) / 2;
 
-        pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
+        pdf.addImage(imgData, "JPEG", x, y, imgWidth, imgHeight);
         pdf.save(`convite-unibb-${Date.now()}.pdf`);
     });
 }
