@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Identificação de Porta - UniBB</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Biblioteca para conversão em imagem -->
-    <script src="https://cloudflare.com"></script>
 </head>
 <body>
 
@@ -15,24 +13,34 @@
         <h2 class="form-title">Gerar Identificação de Porta</h2>
         <form id="form-card">
             <div class="form-group">
-                <label>Nome do Curso *</label>
+                <label for="in-curso">Nome do Curso *</label>
                 <input type="text" id="in-curso" placeholder="Ex: Oficina DE&I Aprendizagem" required>
             </div>
+
             <div class="form-group">
-                <label>Primeiro Educador/a *</label>
+                <label for="in-genero">Gênero dos Educadores/as</label>
+                <select id="in-genero">
+                    <option value="neutro" selected>Neutro</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="in-ed1">Primeiro Educador/a *</label>
                 <input type="text" id="in-ed1" required>
             </div>
             <div class="form-group">
-                <label>Segundo Educador/a (Opcional)</label>
+                <label for="in-ed2">Segundo Educador/a (Opcional)</label>
                 <input type="text" id="in-ed2">
             </div>
             <div class="form-group">
-                <label>Data do evento*</label>
+                <label for="in-data">Data do evento*</label>
                 <input type="text" id="in-data" placeholder="Ex: 10 a 12/03/2026" required>
             </div>
             <div class="form-group">
-                <label>Horário *</label>
-                <input type="text" id="in-horario" placeholder="Ex: 09h ás 18h" required>
+                <label for="in-horario">Horário *</label>
+                <input type="text" id="in-horario" placeholder="Ex: 09h às 18h" required>
             </div>
             <button type="submit" class="btn-primary">Gerar Identificação</button>
         </form>
@@ -44,7 +52,7 @@
             <div class="content-card">
                 <h1><strong>Boas vindas!</strong></h1>
                 <div class="info-item"><strong>Curso:</strong> <span id="out-curso"></span></div>
-                <div class="info-item"><strong>Educadores/as:</strong> <span id="out-ed1"></span></div>
+                <div class="info-item"><strong id="label-educadores">Educadores/as:</strong> <span id="out-ed1"></span></div>
                 <div id="container-ed2"></div>
                 <div class="info-item"><strong>Data:</strong> <span id="out-data"></span></div>
                 <div class="info-item"><strong>Horário:</strong> <span id="out-horario"></span></div>
@@ -54,9 +62,9 @@
         </div>
 
         <div class="botoes-acao">
-            <button class="btn-voltar" onclick="voltar()">Alterar</button>
-            <button class="btn-download" onclick="baixarImagem()">Baixar Imagem (JPG)</button>
-            <button class="btn-download" onclick="baixarPDF()">Baixar PDF</button>
+            <button type="button" class="btn-voltar" onclick="voltar()">Alterar</button>
+            <button type="button" class="btn-download" onclick="baixarImagem()">Baixar Imagem (JPG)</button>
+            <button type="button" class="btn-download" onclick="baixarPDF()">Baixar PDF</button>
         </div>
     </div>
 
@@ -66,7 +74,7 @@
 </body>
 <a href="../index.html" class="btn-voltar2">
     <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z""")/>>
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
     </svg>
     Voltar ao Menu
 </a>
