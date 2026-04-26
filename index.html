@@ -16,7 +16,7 @@
             min-height: 100vh;
             margin: 0;
         }
-        h1 { margin-bottom: 40px; text-align: center; font-weight: 300; font-weight: bold;}
+        h1 { margin-bottom: 40px; text-align: center; font-weight: bold;}
         .container {
             display: flex;
             gap: 25px;
@@ -37,6 +37,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            overflow: hidden;
         }
         .card:hover {
             transform: translateY(-10px);
@@ -46,6 +48,37 @@
         .card h2 { font-size: 1.3rem; margin: 0 0 15px 0; color: #022c4a; }
         .card p { font-size: 0.95rem; color: #444; line-height: 1.4; }
         .icon { font-size: 40px; margin-bottom: 15px; }
+
+        /* Estilo para cards em construção */
+        .card.construcao {
+            background: #e0e0e0;
+            color: #555;
+            border: 2px dashed #999;
+        }
+        .card.construcao:hover {
+            transform: none;
+            box-shadow: none;
+            background: #d6d6d6;
+        }
+        .card.construcao h2 {
+            color: #333;
+        }
+        .card.construcao p strong {
+            color: #c00;
+        }
+        .card.construcao::before {
+            content: "EM CONSTRUÇÃO";
+            position: absolute;
+            top: 20px;
+            right: -60px;
+            background: #c00;
+            color: white;
+            font-weight: bold;
+            padding: 5px 60px;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -69,6 +102,13 @@
             <div class="icon">🚪</div>
             <h2>Identificação de Porta</h2>
             <p>Gerar placa de boas-vindas e identificação para salas de aula.</p>
+        </a>
+
+        <!-- Novo card em construção -->
+        <a href="#" class="card construcao">
+            <div class="icon">✉️</div>
+            <h2>Convite Participante</h2>
+            <p>Gerar convites para turmas presenciais.<br><strong>(Em construção)</strong></p>
         </a>
     </div>
 
