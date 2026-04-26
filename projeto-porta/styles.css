@@ -14,40 +14,128 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
 }
 
-.form-title { color: black; text-align: center; margin-bottom: 20px; }
-.form-group { margin-bottom: 15px; }
-label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; }
-input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+.form-title { 
+    color: black; 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.form-group { 
+    margin-bottom: 15px; 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    font-size: 14px; 
+}
+
+input, select { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-family: inherit; 
+    font-size: 14px; 
+    background-color: #fff; 
+}
+
+select {
+    cursor: pointer;
+}
+
+select:focus, input:focus {
+    border-color: #1a3355;
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 51, 85, 0.4);
+}
 
 .btn-primary { 
-    width: 100%; padding: 14px; background: #1a3355; color: white; 
-    border: none; border-radius: 4px; cursor: pointer; font-weight: bold; 
+    width: 100%; 
+    padding: 14px; 
+    background: #1a3355; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: bold; 
 }
 
 /* Design do Card */
-#card-resultado { flex-direction: column; align-items: center; }
-
-.card { 
-    width: 900px; min-height: 500px; background: white; 
-    display: flex; flex-direction: column; color: #1a3355;
+#card-resultado { 
+    flex-direction: column; 
+    align-items: center; 
 }
 
-.content-card { flex: 1; padding: 20px 80px; }
-.content-card h1 { font-size: 42px; font-weight: 400; margin-bottom: 30px; }
-.info-item { font-size: 22px; margin-bottom: 8px; line-height: 1.2; }
-.educadores-list { margin-left: 175px; margin-top: 2px; }
-.msg-final { margin-top: 30px; font-weight: 400; font-size: 32px; }
+.card { 
+    width: 100%; 
+    max-width: 900px; 
+    min-height: 500px; 
+    background: white; 
+    display: flex; 
+    flex-direction: column; 
+    color: #1a3355;
+    margin: 0 auto;
+}
 
-.botoes-acao { display: flex; gap: 15px; margin-top: 30px; }
-.btn-download { background: #28a745; color: white; border: none; padding: 12px 25px; cursor: pointer; font-weight: bold; border-radius: 4px; }
-.btn-voltar { background: #666; color: white; border: none; padding: 12px 25px; cursor: pointer; border-radius: 4px; }
+.content-card { 
+    flex: 1; 
+    padding: 20px 80px; 
+}
 
-.educadores-dupla {
-    display: flex;
-    gap: 20px;
-    font-size: 22px;
-    margin-bottom: 8px;
-    line-height: 1.2;
+.content-card h1 { 
+    font-size: clamp(28px, 5vw, 42px); 
+    font-weight: 400; 
+    margin-bottom: 30px; 
+}
+
+.info-item { 
+    font-size: 22px; 
+    margin-bottom: 8px; 
+    line-height: 1.2; 
+}
+
+.msg-final { 
+    margin-top: 30px; 
+    font-weight: 400; 
+    font-size: clamp(22px, 4vw, 32px); 
+}
+
+.botoes-acao { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 30px; 
+}
+
+.btn-download { 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 12px 25px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    border-radius: 4px; 
+    transition: background 0.3s ease;
+}
+
+.btn-download:hover {
+    background: #218838;
+}
+
+.btn-voltar { 
+    background: #666; 
+    color: white; 
+    border: none; 
+    padding: 12px 25px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    transition: background 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background: #444;
 }
 
 .btn-voltar2 {
@@ -74,7 +162,7 @@ input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; 
     color: #1a3355;
 }
 
-/* Esconde o botão na hora de gerar o formulário no mobile se necessário */
+/* Responsividade */
 @media (max-width: 600px) {
     .btn-voltar2 {
         position: relative;
@@ -82,5 +170,9 @@ input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; 
         left: 0;
         margin-bottom: 20px;
         display: inline-flex;
+    }
+
+    select {
+        font-size: 16px;
     }
 }
