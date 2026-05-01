@@ -145,7 +145,7 @@ select:focus, input:focus {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: white;
+    color: #f6f632;
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
