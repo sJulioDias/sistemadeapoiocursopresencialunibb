@@ -46,8 +46,7 @@ document.getElementById('form-card').addEventListener('submit', function(e) {
     }
 
     document.getElementById('out-data').innerText = data;
-    document.getElementById('out-horario').innerText = horario;
-
+    document.getElementById('out-horario').innerHTML = horario.replace(/\n/g, "<br>");
     // Trocar telas
     document.getElementById('setup-form').style.display = 'none';
     document.getElementById('card-resultado').style.display = 'flex';
