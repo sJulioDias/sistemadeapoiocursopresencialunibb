@@ -46,7 +46,8 @@ p {
 }
 
 .form-container input,
-.form-container textarea {
+.form-container textarea,
+.form-container select {
     width: 100%;
     padding: 8px;
     margin-top: 4px;
@@ -135,11 +136,42 @@ a {
     margin-top: 20px;
     font-size: 14px;
     line-height: 1.6;
-    text-align: justify;
+    text-align: left;
     color: #fff;
     background: rgba(255,255,255,0.05);
     padding: 12px;
     border-radius: 8px;
+    white-space: pre-line;
+}
+
+#infoEvento .label {
+    color: #f6f632;
+    font-weight: bold;
+}
+
+#descricaoCursoSpan {
+    white-space: pre-line;
+}
+
+strong {
+    color: #f6f632;
+    font-weight: bold;
+}
+
+/* NOVA SEÇÃO DE PRÉ-REQUISITOS */
+#boxPrerequisito {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+#cursoPrerequisito {
+    white-space: pre-line;
 }
 
 /* Rodapé */
@@ -242,27 +274,4 @@ a {
         margin-bottom: 20px;
         display: inline-flex;
     }
-}
-#infoEvento {
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 1.6;
-    text-align: left;
-    color: #fff;
-    background: rgba(255,255,255,0.05);
-    padding: 12px;
-    border-radius: 8px;
-    white-space: pre-line; /* mantém os "enters" */
-}
-
-#infoEvento .label {
-    color: #f6f632;   /* amarelo */
-    font-weight: bold;
-}
-#descricaoCursoSpan {
-    white-space: pre-line; /* mantém os "enters" */
-}
-strong {
-    color: #f6f632;   /* amarelo */
-    font-weight: bold;
 }
