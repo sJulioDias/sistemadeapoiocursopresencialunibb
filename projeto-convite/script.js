@@ -168,7 +168,7 @@ Divulgamos a oferta de vagas para o curso "${curso}" – modalidade presencial.
 
 ${descricaoCurso}
 
-Que tal aproveitar esta oportunidade para seu desenvolvimento profissional? Vagas Limitadas.
+Que tal aproveitar esta oportunidade para seu desenvolvimento profissional? Vagas limitadas.
 
 Seguem as informações:
 
