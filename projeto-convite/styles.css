@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(160deg, #022c4a, #04324f);
+    color: #fff;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 12px 0;
+    text-align: justify;
+}
+
+/* FORMULÁRIO */
+.form-container {
+    max-width: 420px;
+    margin: 0 auto;
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #022c4a;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background: #04324f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+    background: #022c4a;
+}
+
+/* RESULTADO */
+.resultado-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* CARTÃO */
+.container {
+    background: linear-gradient(160deg, #022c4a, #04324f);
+    padding: 24px 20px 40px;
+    position: relative;
+    border-radius: 0px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* LOGO */
+.header-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-text {
+    color: #f6f632;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.logo-img {
+    width: 22px;
+    height: auto;
+}
+
+h1 {
+    color: #f6f632;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 12px;
+}
+
+.highlight {
+    background-color: #f6f632;
+    color: #022c4a;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+a {
+    color: #f6f632;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Parágrafo único com informações do evento */
+#infoEvento {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.footer-linha-2 {
+    color: #f6f632;
+    font-weight: bold;
+}
+
+.footer-linha-1 {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+/* EMAIL */
+.email-container {
+    background: linear-gradient(160deg, #0b4a75, #0f5e94);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.email-container textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+.email-container button {
+    width: 100%;
+    padding: 10px;
+    background: #032a43;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.email-container button:hover {
+    background: #021d33;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .resultado-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#colorPicker {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #f6f632;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 1px solid #f6f632;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(2, 44, 74, 0.5);
+    z-index: 100;
+}
+
+.btn-voltar:hover {
+    background: #f6f632;
+    color: #022c4a;
+}
+
+@media (max-width: 600px) {
+    .btn-voltar {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+        display: inline-flex;
+    }
+}
+#infoEvento {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    padding: 12px;
+    border-radius: 8px;
+    white-space: pre-line; /* mantém os "enters" */
+}
+
+#infoEvento .label {
+    color: #f6f632;   /* amarelo */
+    font-weight: bold;
+}
+#descricaoCursoSpan {
+    white-space: pre-line; /* mantém os "enters" */
+}
+strong {
+    color: #f6f632;   /* amarelo */
+    font-weight: bold;
+}
