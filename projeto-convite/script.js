@@ -55,7 +55,7 @@ form.addEventListener("submit", (e) => {
     // Informações do evento em linhas separadas, com labels em amarelo
     document.getElementById("infoEvento").innerHTML = 
 `<span class="label">Curso:</span> ${curso}
-<span class="label">Datas:</span> ${formatarDataISOparaBR(dataInicio)} a ${formatarDataISOparaBR(dataFim)}
+<span class="label">Data:</span> ${formatarDataISOparaBR(dataInicio)} a ${formatarDataISOparaBR(dataFim)}
 <span class="label">Horário:</span> ${horario}
 <span class="label">Local:</span> ${localConcatenado}
 <span class="label">Código FIP:</span> ${codigoFip}`;
