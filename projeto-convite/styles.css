@@ -175,6 +175,27 @@ strong {
     white-space: pre-line;
 }
 
+/* BLOCO COM LOGO LATERAL */
+.bloco-com-logo {
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.bloco-com-logo .texto-bloco {
+    flex: 1; /* ocupa o espaço restante */
+}
+
+.logo-lateral {
+    width: 80px;
+    height: auto;
+}
+
+.logo-lateral.esquerda {
+    order: -1; /* sempre à esquerda */
+}
+
 /* Rodapé */
 .footer {
     text-align: center;
