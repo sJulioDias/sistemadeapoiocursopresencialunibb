@@ -74,12 +74,12 @@ form.addEventListener("submit", (e) => {
     document.getElementById("prazoSpan").textContent = formatarDataISOparaBR(prazoInscricao);
 
     // Informações do evento + pré-requisitos juntos
-    let infoHTML = `
-<span class="label">Curso:</span> ${curso}
-<span class="label">Data:</span> ${formatarDataISOparaBR(dataInicio)} a ${formatarDataISOparaBR(dataFim)}
-<span class="label">Horário:</span> ${horario}
-<span class="label">Local:</span> ${localConcatenado}
-<span class="label">Código FIP:</span> ${codigoFip}`;
+    let infoHTML = `<span class="label">Curso:</span> ${curso}
+    <span class="label">Data:</span> ${formatarDataISOparaBR(dataInicio)} a ${formatarDataISOparaBR(dataFim)}
+    <span class="label">Horário:</span> ${horario}
+    <span class="label">Local:</span> ${localConcatenado}
+    <span class="label">Código FIP:</span> ${codigoFip}`;
+
 
     if (selectPrereq.value === "sim" && prerequisito.trim()) {
         infoHTML += `\n<span class="label">Pré‑requisitos:</span> ${prerequisito}`;
