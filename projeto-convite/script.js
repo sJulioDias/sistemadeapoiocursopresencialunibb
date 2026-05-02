@@ -21,6 +21,19 @@ colorPicker.addEventListener("input", () => {
     cartao.style.background = corEscolhida;
 });
 
+// --- PRÉ-REQUISITOS ---
+const selectPrereq = document.getElementById("temPrerequisito");
+const prereqContainer = document.getElementById("prerequisitoContainer");
+
+selectPrereq.addEventListener("change", () => {
+    if (selectPrereq.value === "sim") {
+        prereqContainer.classList.remove("hidden");
+    } else {
+        prereqContainer.classList.add("hidden");
+        document.getElementById("prerequisitoCurso").value = "";
+    }
+});
+
 // SUBMISSÃO DO FORMULÁRIO
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -33,11 +46,19 @@ form.addEventListener("submit", (e) => {
     const horario = value("horario");
     const enderecoSala = value("enderecoSala");
     const cidadeUf = value("cidadeUf");
+    const prerequisito = value("prerequisitoCurso");
 
     // --- VERIFICAÇÃO DE DATAS ---
     if (new Date(dataFim) < new Date(dataInicio)) {
         alert("A data de término não pode ser anterior à data de início.");
-        return; // interrompe o envio do formulário
+        return;
+    }
+
+    // --- VERIFICAÇÃO DE PRÉ-REQUISITOS ---
+    if (selectPrereq.value === "sim" && !prerequisito.trim()) {
+        alert("Por favor, informe os pré‑requisitos para participação no curso.");
+        document.getElementById("prerequisitoCurso").focus();
+        return;
     }
 
     // Concatena endereço e cidade/UF
@@ -52,17 +73,23 @@ form.addEventListener("submit", (e) => {
     document.getElementById("descricaoCursoSpan").innerText = descricaoCurso;
     document.getElementById("prazoSpan").textContent = formatarDataISOparaBR(prazoInscricao);
 
-    // Informações do evento em linhas separadas, com labels em amarelo
-    document.getElementById("infoEvento").innerHTML = 
-`<span class="label">Curso:</span> ${curso}
+    // Informações do evento + pré-requisitos juntos
+    let infoHTML = `
+<span class="label">Curso:</span> ${curso}
 <span class="label">Data:</span> ${formatarDataISOparaBR(dataInicio)} a ${formatarDataISOparaBR(dataFim)}
 <span class="label">Horário:</span> ${horario}
 <span class="label">Local:</span> ${localConcatenado}
 <span class="label">Código FIP:</span> ${codigoFip}`;
 
+    if (selectPrereq.value === "sim" && prerequisito.trim()) {
+        infoHTML += `\n<span class="label">Pré‑requisitos:</span> ${prerequisito}`;
+    }
+
+    document.getElementById("infoEvento").innerHTML = infoHTML;
+
     // Gera conteúdo de e-mail e descrição acessível
-    gerarEmail(curso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip, cidadeUf);
-    gerarDescricao(curso, descricaoCurso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip);
+    gerarEmail(curso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip, cidadeUf, prerequisito);
+    gerarDescricao(curso, descricaoCurso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito);
 
     resultado.classList.remove("hidden");
     resultado.scrollIntoView({ behavior: "smooth" });
@@ -123,13 +150,14 @@ btnAlterarCor.addEventListener("click", () => {
 
 // FUNÇÃO PARA GERAR TÍTULO DO EMAIL
 function gerarEmail(curso, prazo, dataInicio, dataFim, horario, localConcatenado, codigoFip, cidadeUf) {
-    document.getElementById("emailCorpo").value = `
+        document.getElementById("emailCorpo").value = `
 Convite - Curso ${curso} - ${cidadeUf} - Inscreva-se até ${prazo}
 `.trim();
 }
 
 // FUNÇÃO PARA GERAR DESCRIÇÃO DA IMAGEM (ACESSIBILIDADE)
-function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horario, localConcatenado, codigoFip) {
+function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito) {
+    const blocoPrereq = prerequisito ? `\n📌 Pré‑requisitos: ${prerequisito}` : "";
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
 Cartão digital UniBB com convite para curso presencial, com o logo do Banco do Brasil na cor amarela.
@@ -148,16 +176,13 @@ Seguem as informações:
 📅 Data de término: ${formatarDataISOparaBR(dataFim)}
 🕒 Horário: ${horario}
 📍 Local: ${localConcatenado}
-📌 Código FIP/Ponto Eletrônico: ${codigoFip}
+📌 Código FIP/Ponto Eletrônico: ${codigoFip}${blocoPrereq}
 
 Processo de inscrição:
 
 1. Negocie sua liberação com sua liderança.
-
 2. Acesse o Portal do Aluno, https://gepesbhz.intranet.bb.com.br/portaldoaluno/.
-
 3. Clique na aba “Participante” e realize sua inscrição, até o dia ${prazo}.
-
 4. Após isso, solicite que um/a gestor/a da sua unidade acesse o mesmo link, na aba “Gestor”, para validar sua participação. Este passo é imprescindível! (Vide Tutorial em anexo).
 
 Sua presença fará toda a diferença!
