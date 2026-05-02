@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cartão de Convite UniBB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="form-container">
+    <h2>Convite para Curso</h2>
+
+    <form id="conviteForm">
+        <label>
+            Curso
+            <input type="text" id="curso" placeholder="Ex: Oficina Relações Jurídico-Negociais" required />
+        </label>
+
+        <label>
+            Descrição do curso
+            <textarea id="descricaoCurso" rows="3" placeholder="Ex: O curso tem como objetivo de aprendizagem..." required></textarea>
+        </label>
+
+        <label>
+            Prazo para inscrição
+            <input type="date" id="prazoInscricao" required />
+        </label>
+
+        <label>
+            Data de início
+            <input type="date" id="dataInicio" required />
+        </label>
+
+        <label>
+            Data de término
+            <input type="date" id="dataFim" required />
+        </label>
+
+        <label>
+            Horário
+            <input type="text" id="horario" placeholder="Ex: 09h às 15h15" required />
+        </label>
+
+        <label>
+            Endereço da sala (sem cidade/UF)
+            <textarea id="enderecoSala" rows="2" required></textarea>
+        </label>
+
+        <label>
+            Cidade/UF
+            <input type="text" id="cidadeUf" required />
+        </label>
+
+        <button type="submit">Gerar convite</button>
+    </form>
+</section>
+
+<section id="resultado" class="hidden">
+    <div class="resultado-grid">
+
+        <main class="container" id="cartao">
+
+        <header class="top">
+            <div class="header-right">
+                <span class="logo-text">UniBB</span>
+                <img src="../logobb.png" alt="Logo BB" class="logo-img">
+            </div>
+            <h1>Olá, Colega!</h1>
+        </header>
+
+            <p>
+                Divulgamos a oferta de vagas para o curso
+                <strong id="cursoSpan"></strong> – modalidade presencial, que ocorrerá na cidade de 
+                <strong id="cidadeUfSpan"></strong>.
+            </p>
+
+            <p id="descricaoCursoSpan"></p>
+
+            <p>Que tal aproveitar esta oportunidade para seu desenvolvimento profissional? <strong>Vagas Limitadas.</strong></p>
+             
+            <p>Seguem as informações:</p>
+
+            <!-- Parágrafo único com todas as informações do evento -->
+            <p id="infoEvento"></p>
+
+            <p><strong>Processo de inscrição:</strong> </p>
+            <p>1. Negocie sua liberação com sua liderança. </p>
+            <p>2. Acesse o <strong>Portal do Aluno</strong>, https://gepesbhz.intranet.bb.com.br/portaldoaluno/.</p>
+            <p>3. Clique na aba “Participante” e realize sua inscrição, até o dia  
+                <span class="highlight" id="prazoSpan"></span>.
+            </p>
+            <p><strong>4. Após isso, solicite que um/a gestor/a da sua unidade acesse o mesmo link, na aba “Gestor”, para validar sua participação. Este passo é imprescindível! (Vide Tutorial em anexo).</strong> </p>
+            <p>Sua presença fará toda a diferença! </p>
+            <p> </p>
+
+            <footer class="footer">
+                <div class="footer-linha-2">Gepes Especializada</div>
+                <div class="footer-linha-1">Educação e Seleção</div>
+            </footer>
+        </main>
+
+        <aside class="email-container">
+            <button id="btnImagem">Copiar e baixar imagem (.JPG)</button>
+            <button id="btnCopiarEmail">Copiar texto do e-mail</button>
+            <button id="btnAlterarCor">Alterar cor do cartão</button>
+            <button id="btnEmail">Compartilhar por e-mail</button>
+            <label for="colorPicker">Escolher cor personalizada:</label>
+            <input type="color" id="colorPicker" value="#022c4a">
+
+            <h3>Título do e-mail</h3>
+            <textarea id="emailCorpo" rows="2"></textarea>
+
+            <h3>Texto e descrição da imagem (acessibilidade)</h3>
+            <textarea id="descricaoImagem" rows="20"></textarea>
+        </aside>
+
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+<a href="../index.html" class="btn-voltar">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+    </svg>
+    Voltar ao Menu
+</a>
+
+</html>
