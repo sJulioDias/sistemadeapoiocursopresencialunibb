@@ -160,7 +160,7 @@ function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horar
     const blocoPrereq = prerequisito ? `\nPré‑requisitos: ${prerequisito}` : "";
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
-Cartão digital UniBB com convite para curso presencial na cor Azul, com o logo do Banco do Brasil na cor amarela.
+Cartão digital com convite para curso presencial na cor Azul, com o logo da UniBB na cor amarela.
 
 Olá, Colega!
 
