@@ -134,11 +134,11 @@ Olá, ${nome}!
 Recebemos sua manifestação de interesse e validamos sua atuação como educador/a titular no curso "${curso}".
 A autorização da atuação deve ser liberada pelo/a Gestor/a no Portal do Aluno, aba Gestor.
 
-📅 Dia limite para autorização: ${dia}
-📅 Dia prévio: ${diaPrevio}
-📅 Datas e horários do evento: ${datasEvento}
-📍 Local: ${localConcatenado}
-📌 Código FIP/Ponto Eletrônico: ${codigoFip}
+Dia limite para autorização: ${dia}
+Dia prévio: ${diaPrevio}
+Datas e horários do evento: ${datasEvento}
+Local: ${localConcatenado}
+Código FIP/Ponto Eletrônico: ${codigoFip}
 
 - Ausência deve ser registrada e despachada na Plataforma BB.
 - Registro: Plataforma BB > Pessoas > Minha Visão > Ausências e Afastamentos > Planejamento de Ausências > Adicionar Ausência > Motivo: EDUCADOR – DIPES
