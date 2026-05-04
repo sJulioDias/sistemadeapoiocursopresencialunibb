@@ -127,7 +127,7 @@ Educador/a - Convite Atuação Curso ${curso} - ${cidadeUf} - Responder até ${d
 function gerarDescricao(nome, curso, dia, diaPrevio, datasEvento, localConcatenado, codigoFip) {
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
-Cartão digital UniBB com informações de curso e instruções.
+Cartão digital UniBB na cor azul e logotipo do Banco do Brasil em amarelo. Possui as informações de curso e instruções.
 
 Olá, ${nome}!
 
