@@ -96,7 +96,7 @@ btnImagem.addEventListener("click", () => {
 });
 
 function gerarEmail(curso, data, horario, local, prereq, cidadeUF) {
-    const bloco = prereq ? `\n📌 Pré‑requisitos: ${prereq}\n` : "";
+    const bloco = prereq ? `\nPré‑requisitos: ${prereq}\n` : "";
 
     document.getElementById("emailCorpo").value = `
 Confirmação de participação no curso ${curso} - ${data} - ${cidadeUF}
@@ -104,7 +104,7 @@ Confirmação de participação no curso ${curso} - ${data} - ${cidadeUF}
 }
 
 function gerarDescricao(curso, data, horario, local, prereq, deslocamentoAtivo) {
-    const blocoPrereq = prereq ? `\n\n📌Pré-requisitos: ${prereq}.` : "";
+    const blocoPrereq = prereq ? `\n\nPré-requisitos: ${prereq}.` : "";
     const blocoDeslocamento = deslocamentoAtivo ? `
 Para os participantes que informaram previamente a necessidade de hospedagem:
 - A reserva será efetuada por esta Gepes e enviada por e-mail aos participantes.
@@ -116,15 +116,15 @@ Deslocamento Terrestre:
 
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
-Card digital de confirmação de curso com as instruções.
+Cartão digital UniBB na cor azul e logotipo do Banco do Brasil em amarelo. Possui as informações de curso e instruções.
 
 Olá!
 
 Sua participação no curso "${curso}" está confirmada.
 
-📅 Data: ${data}
-⏰ Horário: ${horario}
-📍 Local: ${local}${blocoPrereq}
+Data: ${data}
+Horário: ${horario}
+Local: ${local}${blocoPrereq}
 ${blocoDeslocamento}
 Situação FIP/ Ponto Eletrônico: 27X, onde X é o número de horas de treinamento no dia.
 Obrigatório o uso de crachá e orientamos levar seu copo para consumo de café e garrafa ou copo para consumo de água.
