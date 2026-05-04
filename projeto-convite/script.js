@@ -157,10 +157,10 @@ Convite - Curso ${curso} - ${cidadeUf} - Inscreva-se até ${prazo}
 
 // FUNÇÃO PARA GERAR DESCRIÇÃO DA IMAGEM (ACESSIBILIDADE)
 function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito) {
-    const blocoPrereq = prerequisito ? `\n📌 Pré‑requisitos: ${prerequisito}` : "";
+    const blocoPrereq = prerequisito ? `\nPré‑requisitos: ${prerequisito}` : "";
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
-Cartão digital UniBB com convite para curso presencial, com o logo do Banco do Brasil na cor amarela.
+Cartão digital UniBB com convite para curso presencial na cor Azul, com o logo do Banco do Brasil na cor amarela.
 
 Olá, Colega!
 
@@ -172,11 +172,11 @@ Que tal aproveitar esta oportunidade para seu desenvolvimento profissional? Vaga
 
 Seguem as informações:
 
-📅 Data de início: ${formatarDataISOparaBR(dataInicio)}
-📅 Data de término: ${formatarDataISOparaBR(dataFim)}
-🕒 Horário: ${horario}
-📍 Local: ${localConcatenado}
-📌 Código FIP/Ponto Eletrônico: ${codigoFip}${blocoPrereq}
+Data de início: ${formatarDataISOparaBR(dataInicio)}
+Data de término: ${formatarDataISOparaBR(dataFim)}
+Horário: ${horario}
+Local: ${localConcatenado}
+Código FIP/Ponto Eletrônico: ${codigoFip}${blocoPrereq}
 
 Processo de inscrição:
 
