@@ -87,6 +87,8 @@ p {
     position: relative;
     border-radius: 0px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    border-top: 10px solid #f6f632;
+    border-bottom: 10px solid #f6f632;
 }
 
 /* LOGO */
