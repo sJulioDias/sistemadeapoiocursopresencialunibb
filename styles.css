@@ -125,17 +125,21 @@ header.shrink h1 { font-size: 1.4rem; }
 
 /* Botão de menu sem fundo */
 #toggleMenu {
-  position: fixed;
-  top: 80px;
-  left: 20px;
-  background: transparent; /* sem fundo */
-  border: none;            /* sem borda */
-  padding: 0;              /* sem espaçamento extra */
-  font-size: 1.4rem;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem; /* Aumentado levemente para alinhar com o ícone */
   cursor: pointer;
   z-index: 1100;
-  color: white;           /* texto amarelo */
+  color: #022c4a;    /* Cor inicial azul (combina com o header amarelo) */
   font-weight: bold;
+  transition: all 0.3s ease;
+  margin-right: 10px; /* Espaço entre o botão e o ícone da instituição */
+}
+
+/* Quando o header encolher, o botão fica branco */
+header.shrink #toggleMenu {
+  color: white;
+  font-size: 1.5rem;
 }
 
 /* Sidebar translúcido */
