@@ -12,6 +12,14 @@ window.addEventListener("scroll", function() {
 const toggleBtn = document.getElementById("toggleMenu");
 const sidebar = document.getElementById("sidebar");
 
-toggleBtn.addEventListener("click", () => {
+toggleBtn.addEventListener("click", (event) => {
+  event.stopPropagation(); // evita fechar ao clicar no botão
   sidebar.classList.toggle("open");
+});
+
+// Fecha o menu ao clicar fora dele
+document.addEventListener("click", (event) => {
+  if (sidebar.classList.contains("open") && !sidebar.contains(event.target) && event.target !== toggleBtn) {
+    sidebar.classList.remove("open");
+  }
 });
