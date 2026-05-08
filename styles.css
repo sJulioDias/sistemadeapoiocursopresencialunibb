@@ -1,0 +1,167 @@
+body {
+  background: linear-gradient(160deg, #022c4a, #04324f);
+  color: white;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+}
+
+/* Cabeçalho fixo */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(205, 188, 43);
+  color: #022c4a;
+  padding: 20px 40px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon-header {
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+/* Estado reduzido ao rolar */
+header.shrink {
+  padding: 10px 30px;
+  background: rgba(2, 44, 74, 0.98);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+header.shrink .icon-header { font-size: 1.5rem; }
+header.shrink h1 { font-size: 1.4rem; }
+
+.container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 120px 20px 40px;
+}
+
+.card {
+  background: white;
+  color: #022c4a;
+  padding: 30px;
+  border-radius: 15px;
+  width: 280px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  background: #f6f632;
+}
+.card h2 { font-size: 1.3rem; margin: 0 0 15px 0; color: #022c4a; }
+.card p { font-size: 0.95rem; color: #444; line-height: 1.4; }
+.icon { font-size: 40px; margin-bottom: 15px; }
+
+/* Card em construção */
+.card.construcao {
+  background: #e0e0e0;
+  color: #555;
+  border: 2px dashed #999;
+}
+.card.construcao:hover {
+  transform: none;
+  box-shadow: none;
+  background: #b8adad;
+}
+.card.construcao h2 { color: #333; }
+.card.construcao p strong { color: #c00; }
+.card.construcao::before {
+  content: "VERSÃO PARA TESTE";
+  position: absolute;
+  top: 20px;
+  right: -60px;
+  left: 50%;
+  background: green;
+  color: white;
+  font-weight: bold;
+  padding: 5px 60px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-size: 0.9rem;
+}
+/* Card Cancelamento */
+.card.cancelamento::before {
+  content: "EM DESENVOLVIMENTO";
+  position: absolute;
+  top: 20px;
+  right: -60px;
+  left: 50%;
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 5px 60px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-size: 0.9rem;
+}
+
+/* Botão de menu sem fundo */
+#toggleMenu {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  background: transparent; /* sem fundo */
+  border: none;            /* sem borda */
+  padding: 0;              /* sem espaçamento extra */
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 1100;
+  color: white;           /* texto amarelo */
+  font-weight: bold;
+}
+
+/* Sidebar translúcido */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: rgba(2, 44, 74, 0.85);
+  backdrop-filter: blur(6px);
+  color: white;
+  transition: left 0.3s ease;
+  padding-top: 100px;
+  z-index: 1050;
+}
+
+#sidebar ul { list-style: none; padding: 0; }
+#sidebar ul li { margin: 20px 0; }
+#sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+#sidebar ul li a:hover { color: #f6f632; }
+
+/* Estado aberto */
+#sidebar.open { left: 0; }
