@@ -157,15 +157,35 @@ header.shrink #toggleMenu {
   z-index: 1050;
 }
 
-#sidebar ul { list-style: none; padding: 0; }
-#sidebar ul li { margin: 20px 0; }
+/* Sidebar links melhorados */
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar ul li {
+  margin: 0; /* Removemos a margem do <li> para o <a> ocupar todo o espaço */
+}
+
 #sidebar ul li a {
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  
+  /* O pulo do gato: */
+  display: block;          /* Faz o link ocupar a largura toda da sidebar */
+  padding: 15px 25px;      /* Cria uma área de clique bem generosa */
+  border-left: 4px solid transparent; /* Preparação para o hover */
 }
-#sidebar ul li a:hover { color: #f6f632; }
+
+#sidebar ul li a:hover {
+  color: #f6f632;
+  background: rgba(255, 255, 255, 0.1); /* Fundo leve para indicar seleção */
+  border-left: 4px solid #f6f632;      /* Barrinha amarela lateral no hover */
+}
+
 
 /* Estado aberto */
 #sidebar.open { left: 0; }
