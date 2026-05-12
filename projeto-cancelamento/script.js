@@ -85,9 +85,9 @@ Passando por aqui pra avisar que, infelizmente, o evento "${curso}" - ${periodo}
 
 A gente entende que isso pode atrapalhar os seus planos e sentimos muito por isso.
 
-Pra não perder as próximas oportunidades, vale ficar de olho no portal, onde novas turmas podem ser abertas para se inscrever novamente. 😉
+Pra não perder as próximas oportunidades, vale ficar de olho no portal, onde novas turmas podem ser abertas para se inscrever novamente. 
 
-Obrigada pela compreensão e qualquer dúvida, estamos por aqui! ✋
+Obrigada pela compreensão e qualquer dúvida, estamos por aqui!
 
 Atenciosamente,
 Gepes Especializada - Educação e Seleção
