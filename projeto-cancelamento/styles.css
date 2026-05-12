@@ -70,8 +70,8 @@ body {
 /* CARTÃO DE CANCELAMENTO */
 .container-cancelamento {
     position: relative; /* necessário para ::before */
-    background: linear-gradient(160deg, #dce8ee, #cee8ee);
-    color: #022c4a;
+    background: linear-gradient(160deg, #0665b9, #005DAC);
+    color: white;
     padding: 12px 14px 18px;
     box-shadow: 0 3px 10px black;
     font-size: 14px;
@@ -88,7 +88,7 @@ body {
     background: url("../balao.png") no-repeat;
     background-size: 600px; /* controla o tamanho da imagem */
     background-position: center 5%; /* centralizado no eixo X e 80% da altura */
-    opacity: 0.03;
+    opacity: 0.05;
     z-index: 0;
 }
 
@@ -100,7 +100,7 @@ body {
 /* FAIXA SUPERIOR */
 .faixa-superior {
     background: #022c4a;
-    color: #f6f632;
+    color: #FFE718;
     padding: 8px 12px;
     margin-bottom: 10px;
     display: flex;
@@ -126,7 +126,7 @@ body {
 
 .logo-text {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .logo-img {
@@ -143,7 +143,7 @@ p {
 }
 
 strong {
-    color: #022c4a;
+    color: #FFE718;;
     font-weight: bold;
 }
 
@@ -155,14 +155,14 @@ strong {
 }
 
 .footer-linha-2 {
-    color: #022c4a;
+    color: #FFE718;;
     font-weight: bold;
     margin: 0;
     font-size: 14px;
 }
 
 .footer-linha-1 {
-    color: #022c4a;
+    color: white;
     margin: 0; 
     font-size: 14px;
 }
