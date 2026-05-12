@@ -17,7 +17,7 @@
 
 
 <section class="form-container">
-    <h2>Comunicado de cancelamento</h2>
+    <h2>Gerar cartão de cancelamento</h2>
 
     <form id="cancelamentoForm">
         <label>
@@ -33,11 +33,6 @@
         <label>
             Período do curso
             <input type="text" id="periodo" placeholder="Ex: 10 a 12 de junho de 2026" required />
-        </label>
-
-        <label>
-            Motivo do cancelamento
-            <textarea id="motivo" rows="3" placeholder="Ex: Baixo quórum, problema com o educador..." required></textarea>
         </label>
 
         <button type="submit">Gerar comunicado</button>
@@ -58,15 +53,14 @@
             <br>
             <p>Olá, Colega!</p>
 
-            <p>Informamos que o curso <strong id="cursoSpan"></strong>, previsto para ocorrer em <strong id="cidadeUfSpan"></strong>, no período de <strong id="periodoSpan"></strong>
-            foi <strong>cancelado</strong>.</p>
+            <p> Passando por aqui pra avisar que, infelizmente, o evento <strong id="cursoSpan"></strong> - <strong id="periodoSpan"></strong> - <strong id="cidadeUfSpan"></strong>
+            teve de ser cancelado. </p>
+            
+            <p>A gente entende que isso pode atrapalhar os seus planos e sentimos muito por isso.</p>
 
-            <p><strong>Motivo do cancelamento:</strong> <span id="motivoSpan"></span></p>
+            <p>Pra não perder as próximas oportunidades, vale ficar de olho no portal, onde novas turmas podem ser abertas para se inscrever novamente. 😉</p>
 
-            <p>Pedimos que continue acompanhando novas comunicações e o planejamento de turmas no <strong>Portal do Aluno</strong>
-            para se inscrever em nova oportunidade.</p>
-
-            <p>Atenciosamente,</p>
+            <p>Obrigada pela compreensão e qualquer dúvida, estamos por aqui! ✋</p>
 
             <footer class="footer">
                 <div class="footer-linha-2">Gepes Especializada</div>
