@@ -82,7 +82,7 @@ form.addEventListener("submit", (e) => {
 
 
     if (selectPrereq.value === "sim" && prerequisito.trim()) {
-        infoHTML += `\n<span class="label">Pré‑requisitos:</span> ${prerequisito}`;
+        infoHTML += `\n<span class="label">Pré‑requisitos:</span><br>${prerequisito}`;
     }
 
     document.getElementById("infoEvento").innerHTML = infoHTML;
