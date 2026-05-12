@@ -12,15 +12,13 @@ form.addEventListener("submit", (e) => {
     const curso = value("curso");
     const cidadeUf = value("cidadeUf");
     const periodo = value("periodo");
-    const motivo = value("motivo");
 
     document.getElementById("cursoSpan").textContent = curso;
     document.getElementById("cidadeUfSpan").textContent = cidadeUf;
     document.getElementById("periodoSpan").textContent = periodo;
-    document.getElementById("motivoSpan").textContent = motivo;
 
     gerarEmail(curso, cidadeUf, periodo);
-    gerarDescricao(curso, cidadeUf, periodo, motivo);
+    gerarDescricao(curso, cidadeUf, periodo);
 
     resultado.classList.remove("hidden");
     resultado.scrollIntoView({ behavior: "smooth" });
@@ -76,18 +74,20 @@ Comunicado - Cancelamento do curso ${curso} - ${cidadeUf} (${periodo})
 }
 
 // FUNÇÃO PARA GERAR DESCRIÇÃO DA IMAGEM (ACESSIBILIDADE)
-function gerarDescricao(curso, cidadeUf, periodo, motivo) {
+function gerarDescricao(curso, cidadeUf, periodo) {
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
 Cartão digital de comunicado de cor azul claro, com faixa superior azul contendo a palavra "COMUNICADO" em amarelo.
 
 Olá, Colega!
 
-Informamos que o curso "${curso}", previsto para ocorrer em ${cidadeUf}, no período de ${periodo} foi cancelado.
+Passando por aqui pra avisar que, infelizmente, o evento "${curso}" - ${periodo} - ${cidadeUf} teve de ser cancelado.
 
-Motivo do cancelamento: ${motivo}
+A gente entende que isso pode atrapalhar os seus planos e sentimos muito por isso.
 
-Pedimos que continue acompanhando novas comunicações e o planejamento de turmas no Portal do Aluno para se inscrever em nova oportunidade.
+Pra não perder as próximas oportunidades, vale ficar de olho no portal, onde novas turmas podem ser abertas para se inscrever novamente. 😉
+
+Obrigada pela compreensão e qualquer dúvida, estamos por aqui! ✋
 
 Atenciosamente,
 Gepes Especializada - Educação e Seleção
