@@ -80,72 +80,56 @@ header.shrink h1 { font-size: 1.4rem; }
 .card p { font-size: 0.95rem; color: #444; line-height: 1.4; }
 .icon { font-size: 40px; margin-bottom: 15px; }
 
-/* Card em construção */
-.card.construcao {
+/* Cards Especiais (Construção e Cancelamento agrupados) */
+.card.construcao,
+.card.cancelamento {
   background: #e0e0e0;
   color: #555;
   border: 2px dashed #999;
 }
-.card.construcao:hover {
+.card.construcao:hover,
+.card.cancelamento:hover {
   transform: none;
   box-shadow: none;
   background: #b8adad;
 }
 .card.construcao h2 { color: #333; }
 .card.construcao p strong { color: #c00; }
+
+/* Base comum para as fitas superiores dos cards */
+.card.construcao::before,
+.card.cancelamento::before {
+  position: absolute;
+  top: 20px;
+  right: -60px;
+  left: 50%;
+  color: white;
+  font-weight: bold;
+  padding: 5px 60px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-size: 0.9rem;
+}
 .card.construcao::before {
   content: "VERSÃO PARA TESTE";
-  position: absolute;
-  top: 20px;
-  right: -60px;
-  left: 50%;
-  background: #28a745; /* Verde mais moderno */
-  color: white;
-  font-weight: bold;
-  padding: 5px 60px;
-  transform: rotate(45deg);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  font-size: 0.9rem;
+  background: #28a745;
 }
-/* Card Cancelamento */
 .card.cancelamento::before {
   content: "EM DESENVOLVIMENTO";
-  position: absolute;
-  top: 20px;
-  right: -60px;
-  left: 50%;
-  background: #dc3545; /* Vermelho mais moderno */
-  color: white;
-  font-weight: bold;
-  padding: 5px 60px;
-  transform: rotate(45deg);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  font-size: 0.9rem;
-}
-
-.card.cancelamento {
-  background: #e0e0e0;
-  color: #555;
-  border: 2px dashed #999;
-}
-
-.card.cancelamento:hover {
-  transform: none;
-  box-shadow: none;
-  background: #b8adad;
+  background: #dc3545;
 }
 
 /* Botão de menu sem fundo */
 #toggleMenu {
   background: transparent;
   border: none;
-  font-size: 1.8rem; /* Aumentado levemente para alinhar com o ícone */
+  font-size: 1.8rem;
   cursor: pointer;
   z-index: 1100;
-  color: #022c4a;    /* Cor inicial azul (combina com o header amarelo) */
+  color: #022c4a;
   font-weight: bold;
   transition: all 0.3s ease;
-  margin-right: 10px; /* Espaço entre o botão e o ícone da instituição */
+  margin-right: 10px;
 }
 
 /* Quando o header encolher, o botão fica branco */
@@ -168,16 +152,12 @@ header.shrink #toggleMenu {
   padding-top: 100px;
   z-index: 1050;
 }
+#sidebar.open { left: 0; }
 
-/* Sidebar links melhorados */
 #sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-#sidebar ul li {
-  margin: 0; /* Removemos a margem do <li> para o <a> ocupar todo o espaço */
 }
 
 #sidebar ul li a {
@@ -185,19 +165,13 @@ header.shrink #toggleMenu {
   text-decoration: none;
   font-size: 1.1rem;
   transition: all 0.2s ease;
-  
-  /* O pulo do gato: */
-  display: block;          /* Faz o link ocupar a largura toda da sidebar */
-  padding: 15px 25px;      /* Cria uma área de clique bem generosa */
-  border-left: 4px solid transparent; /* Preparação para o hover */
+  display: block;
+  padding: 15px 25px;
+  border-left: 4px solid transparent;
 }
 
 #sidebar ul li a:hover {
   color: #f6f632;
-  background: rgba(255, 255, 255, 0.1); /* Fundo leve para indicar seleção */
-  border-left: 4px solid #f6f632;      /* Barrinha amarela lateral no hover */
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #f6f632;
 }
-
-
-/* Estado aberto */
-#sidebar.open { left: 0; }
