@@ -123,6 +123,18 @@ header.shrink h1 { font-size: 1.4rem; }
   font-size: 0.9rem;
 }
 
+.card.cancelamento {
+  background: #e0e0e0;
+  color: #555;
+  border: 2px dashed #999;
+}
+
+.card.cancelamento:hover {
+  transform: none;
+  box-shadow: none;
+  background: #b8adad;
+}
+
 /* Botão de menu sem fundo */
 #toggleMenu {
   background: transparent;
