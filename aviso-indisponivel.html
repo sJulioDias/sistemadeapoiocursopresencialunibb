@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo em Desenvolvimento - UniBB</title>
+  <style>
+    body {
+      background: linear-gradient(160deg, #022c4a, #04324f);
+      color: white;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .aviso-container {
+      background: white;
+      color: #022c4a;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+      max-width: 450px;
+      width: 90%;
+      border-top: 8px solid rgb(205, 188, 43);
+    }
+
+    .icon-animado {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      display: inline-block;
+      animation: flutuar 3s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      margin-0 0 30px 0;
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      background: #022c4a;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn-voltar:hover {
+      background: rgb(205, 188, 43);
+      color: #022c4a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="aviso-container">
+    <div class="icon-animado">🛫🏨</div>
+    <h1>Módulo em Construção</h1>
+    <p>O gerador de comunicados de <strong>Hospedagem e Bilhetes Aéreos</strong> está sendo preparado para você e estará disponível em breve.</p>
+    <a href="index.html" class="btn-voltar">Voltar ao Portal</a>
+  </div>
+
+</body>
+</html>
