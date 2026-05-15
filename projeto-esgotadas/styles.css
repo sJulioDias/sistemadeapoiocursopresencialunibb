@@ -88,7 +88,7 @@ body {
     background: url("../balao.png") no-repeat;
     background-size: 600px; /* controla o tamanho da imagem */
     background-position: center 5%; /* centralizado no eixo X e 80% da altura */
-    opacity: 0.05;
+    opacity: 0.1;
     z-index: 0;
 }
 
@@ -202,6 +202,12 @@ strong {
 
 .email-container button:hover {
     background: #021d33;
+}
+
+.mensagem {
+    max-width: 360px;   /* controla a largura máxima */
+    margin: 0 auto;     /* centraliza horizontalmente */
+    text-align: justify; /* mantém alinhamento do texto */
 }
 
 /* BOTÃO VOLTAR */
