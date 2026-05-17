@@ -1,8 +1,13 @@
+@font-face {
+    font-family: 'Banco';
+    src: url(../BancoDoBrasilTextos-Regular.ttf) format('truetype');
+}
+
 body {
     background: linear-gradient(160deg, #022c4a, #04324f);
     color: #fff;
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Banco', Arial, Helvetica, sans-serif;
 }
 
 .hidden {
