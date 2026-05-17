@@ -181,7 +181,7 @@ Código FIP/Ponto Eletrônico: ${codigoFip}${blocoPrereq}
 Processo de inscrição:
 
 1. Negocie sua liberação com sua liderança.
-2. Acesse o Portal do Aluno, https://gepesbhz.intranet.bb.com.br/portaldoaluno/.
+2. Acesse o Portal Capacita Aqui, https://gepesbhz.intranet.bb.com.br/portaldoaluno/.
 3. Clique na aba “Participante” e realize sua inscrição, até o dia ${prazo}.
 4. Após isso, solicite que um/a gestor/a da sua unidade acesse o mesmo link, na aba “Gestor”, para validar sua participação. Este passo é imprescindível! (Vide Tutorial em anexo).
 
