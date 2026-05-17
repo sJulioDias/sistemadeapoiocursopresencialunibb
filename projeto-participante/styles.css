@@ -2,6 +2,7 @@
     font-family: 'Banco';
     src: url(../BancoDoBrasilTextos-Regular.ttf) format('truetype');
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
