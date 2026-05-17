@@ -106,7 +106,7 @@ form.addEventListener("submit", (e) => {
     resultado.scrollIntoView({ behavior: "smooth" });
 });
 
-// BOTÃO PARA BAIXAR IMAGEM
+// BOTÃO PARA BAIXAR E COPIAR IMAGEM
 const btnImagem = document.getElementById("btnImagem");
 btnImagem.addEventListener("click", () => {
     const estiloAtual = window.getComputedStyle(cartao);
@@ -123,14 +123,26 @@ btnImagem.addEventListener("click", () => {
     }).then(canvas => {
         htmlElement.style.scrollBehavior = "smooth";
 
+        // --- DOWNLOAD ---
         const link = document.createElement("a");
         link.download = "convite-unibb.png";
         link.href = canvas.toDataURL("image/png");
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        
-        alert("Imagem baixada com sucesso!");
+
+        // --- COPIAR PARA ÁREA DE TRANSFERÊNCIA ---
+        canvas.toBlob(blob => {
+            const item = new ClipboardItem({ "image/png": blob });
+            navigator.clipboard.write([item])
+                .then(() => {
+                    alert("Imagem baixada e copiada para a área de transferência!");
+                })
+                .catch(err => {
+                    console.error("Erro ao copiar imagem: ", err);
+                    alert("Imagem baixada, mas não foi possível copiar.");
+                });
+        });
     }).catch(err => {
         console.error("Erro ao gerar imagem: ", err);
         alert("Ocorreu um erro ao gerar e baixar a imagem.");
