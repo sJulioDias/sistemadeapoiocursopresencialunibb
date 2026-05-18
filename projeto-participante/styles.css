@@ -47,7 +47,7 @@ body {
 }
 
 img {
-    width: 20px;            /* Tamanho fixo para evitar distorção no canvas */
+    width: 16px;            /* Tamanho fixo para evitar distorção no canvas */
     height: auto;
     display: block;         /* Remove o espaço vazio na base da imagem */
 }
