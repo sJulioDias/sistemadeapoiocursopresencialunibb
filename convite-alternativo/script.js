@@ -82,7 +82,7 @@ form.addEventListener("submit", (e) => {
         </div>
         <div class="date-badge">
             <div class="date-main">${formatarDataISOparaBR(dataInicio).substring(0, 5)} a ${formatarDataISOparaBR(dataFim).substring(0, 5)}</div>
-            <div class="date-sub">PRESENCIAL</div>
+            <div class="date-sub">VAGAS LIMITADAS</div>
         </div>
     `;
     document.getElementById("infoEvento").innerHTML = infoHTML;
