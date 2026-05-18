@@ -430,3 +430,19 @@ body {
     width: 20px;
     height: auto;
 }
+
+.participar-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.texto-bloco {
+    flex: 2;
+}
+
+.imagem-bloco img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
