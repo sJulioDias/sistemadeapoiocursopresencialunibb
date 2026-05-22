@@ -22,10 +22,11 @@ selectPrereq.addEventListener("change", () => {
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // ✅ Verificação obrigatória de pré-requisitos
+    const prerequisitoRaw = value("prerequisitoCurso");
+
+    // ✅ Verificação obrigatória de pré-requisitos corrigida
     if (selectPrereq.value === "sim") {
-        const prerequisitoObrigatorio = value("prerequisitoCurso").trim();
-        if (!prerequisitoObrigatorio) {
+        if (!prerequisitoRaw.trim()) {
             alert("Por favor, informe os pré‑requisitos para participação no curso.");
             document.getElementById("prerequisitoCurso").focus();
             return; // interrompe o envio
@@ -38,7 +39,7 @@ form.addEventListener("submit", (e) => {
     const endereco = value("enderecoSala");
     const cidadeUF = value("cidadeUF");
     const local = `${endereco} - ${cidadeUF}`;
-    const prerequisito = value("prerequisitoCurso");
+    const prerequisito = selectPrereq.value === "sim" ? prerequisitoRaw : "";
     const deslocamentoAtivo = deslocamentoToggle.checked;
 
     text("cursoTitulo", curso);
