@@ -223,7 +223,7 @@ body {
 }
 
 .date-sub {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     margin-top: 4px;
     opacity: 0.9;
@@ -296,6 +296,11 @@ body {
     font-weight: 700;
     padding: 2px 5px;
     border-radius: 3px;
+}
+
+.highlight2 {
+    color: #022c4a;
+    font-weight: 700;
 }
 
 .email-container {
