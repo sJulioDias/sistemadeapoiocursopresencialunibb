@@ -69,7 +69,7 @@ form.addEventListener("submit", (e) => {
 
     // Preenche os campos de texto do cartão
     document.getElementById("cursoSpan").textContent = curso;
-    document.getElementById("cidadeUfSpan").textContent = cidadeUfValor;
+    //document.getElementById("cidadeUfSpan").textContent = cidadeUfValor;
     document.getElementById("descricaoCursoSpan").innerText = descricaoCurso;
     document.getElementById("prazoSpan").textContent = formatarDataISOparaBR(prazoInscricao);
 
@@ -82,7 +82,7 @@ form.addEventListener("submit", (e) => {
         </div>
         <div class="date-badge">
             <div class="date-main">${formatarDataISOparaBR(dataInicio).substring(0, 5)} a ${formatarDataISOparaBR(dataFim).substring(0, 5)}</div>
-            <div class="date-sub">VAGAS LIMITADAS</div>
+            <div class="date-sub">${cidadeUfValor}</div>
         </div>
     `;
     document.getElementById("infoEvento").innerHTML = infoHTML;
