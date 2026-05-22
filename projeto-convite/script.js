@@ -46,7 +46,7 @@ form.addEventListener("submit", (e) => {
     const horario = value("horario");
     const enderecoSala = value("enderecoSala");
     const cidadeUf = value("cidadeUf");
-    const prerequisito = value("prerequisitoCurso");
+    const prerequisito = selectPrereq.value === "sim" ? value("prerequisitoCurso") : "";
 
     // --- VERIFICAÇÃO DE DATAS ---
     if (new Date(dataFim) < new Date(dataInicio)) {
