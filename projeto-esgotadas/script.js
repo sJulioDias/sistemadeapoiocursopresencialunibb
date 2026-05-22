@@ -83,7 +83,7 @@ Olá, Colega!
 
 Recebemos a sua inscrição para o curso "${curso}", que irá ocorrer na cidade de ${cidadeUf} de ${periodo}.
           
-Infelizmente, as vagas para esse evento já foram preenchidas. Seu nome ficará em uma lista de espera e, caso haja desistências, entraremos em contato.
+Infelizmente, as vagas para esse evento já foram preenchidas. Seu nome ficará em uma lista de espera e caso haja desistências entraremos em contato.
 
 Aproveitamos a oportunidade para agradecer seu interesse em participar desse evento.
 
