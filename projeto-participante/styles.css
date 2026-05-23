@@ -28,34 +28,33 @@ body {
     position: relative;
 }
 
-/* Alinha UniBB e Logo na mesma linha à direita e centralizados entre si */
+/* NOVO POSICIONAMENTO DA LOGO E TEXTO JUNTOS */
 .header-right {
+    position: relative;        /* remove o absolute */
     display: flex;
-    align-items: center;    /* Centraliza verticalmente o texto com a imagem */
-    justify-content: flex-end;
-    gap: 8px; 
-    width: 100%;
-    margin-bottom: 15px;
+    justify-content: flex-end; /* joga para a direita dentro do container */
+    align-items: center;
+    gap: 8px;
+    margin-right: 0;           /* garante alinhamento com as bordas do cartão */
 }
 
-.logo {
+.logo-text {
     color: #f6f632;
     font-weight: bold;
-    font-size: 1.15rem;
-    line-height: 1;         /* Remove espaços extras de linha do texto */
-    margin: 0;
+    font-size: 18px;
+
 }
 
-img {
-    width: 16px;            /* Tamanho fixo para evitar distorção no canvas */
+.logo-img {
+    width: 16px; /* Ajuste o tamanho se preferir maior ou menor */
     height: auto;
-    display: block;         /* Remove o espaço vazio na base da imagem */
 }
 
 .top h1 {
     text-align: center;
     font-size: 1.45rem;
     line-height: 1.3;
+    margin-top: 15px;
 }
 
 /* FORMULÁRIO */
