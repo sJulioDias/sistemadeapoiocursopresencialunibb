@@ -194,8 +194,6 @@ Olá! Temos uma nova turma na região. Aproveite esta oportunidade para seu dese
 Sobre o curso:
 ${descricaoCurso}
 
-Que tal aproveitar esta oportunidade para seu desenvolvimento profissional? Vagas limitadas.
-
 Seguem as informações:
 
 Data de início: ${formatarDataISOparaBR(dataInicio)}
