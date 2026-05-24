@@ -100,7 +100,7 @@ body {
 
 .main-card {
     background-color: #fcfbf2;
-    border-radius: 30px;
+    border-radius: 10px;
     padding: 45px 25px 25px 25px;
     position: relative;
     margin-top: 10px;
@@ -113,7 +113,7 @@ body {
     font-weight: 800;
     font-size: 18px;
     padding: 6px 25px;
-    border-radius: 50px;
+    border-radius: 10px;
     position: absolute;
     top: -14px;
     left: 50%;
@@ -209,7 +209,7 @@ body {
     background-color: #005DAC;
     color: #fff;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 6px;
     text-align: center;
     display: flex;
     flex-direction: column;
