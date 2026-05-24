@@ -187,10 +187,11 @@ function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horar
 #Paratodosverem
 Cartão digital com convite para curso presencial estruturado com degradê azul escuro e um cartão claro interno. Exibe insígnias nas cores amarelo e azul com a marca UniBB.
 
-Olá, Colega!
+"${curso}" – modalidade presencial.
 
-Divulgamos a oferta de vagas para o curso "${curso}" – modalidade presencial.
+Olá! Temos uma nova turma na região. Aproveite esta oportunidade para seu desenvolvimento profissional! Mas atenção, as vagas são limitadas.
 
+Sobre o curso:
 ${descricaoCurso}
 
 Que tal aproveitar esta oportunidade para seu desenvolvimento profissional? Vagas limitadas.
@@ -206,7 +207,7 @@ Código FIP/Ponto Eletrônico: ${codigoFip}${blocoPrereq}
 Processo de inscrição:
 
 1. Negocie sua liberação com sua liderança.
-2. Acesse o Portal do Aluno, https://gepesbhz.intranet.bb.com.br/portaldoaluno/.
+2. Acesse o Portal Capacita Aqui, https://gepesbhz.intranet.bb.com.br/capacitaaqui/.
 3. Clique na aba “Participante” e realize sua inscrição, até o dia ${prazo}.
 4. Após isso, solicite que um/a gestor/a da sua unidade acesse o mesmo link, na aba “Gestor”, para validar sua participação. Este passo é imprescindível! (Vide Tutorial em anexo).
 
