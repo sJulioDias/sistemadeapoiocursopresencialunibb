@@ -107,7 +107,7 @@ const cores = [
     "linear-gradient(160deg, #2c3e50, #000000)", 
     "linear-gradient(160deg, #102a43, #243b55)", 
     "linear-gradient(160deg, #0d324d, #1c1c1c)", 
-    "linear-gradient(160deg, #bdc3c7, #2c3e50)"  
+    "linear-gradient(160deg, #3333BD, #212194)"  
 ];
 let indiceCor = 0;
 
