@@ -4,7 +4,7 @@
 }
 
 body {
-    background: linear-gradient(160deg, #022c4a, #04324f);
+    background: linear-gradient(160deg, #102a43, #243b55);
     color: #fff;
     padding: 20px;
     font-family: 'Banco', Arial, Helvetica, sans-serif;
@@ -75,7 +75,7 @@ body {
 /* CARTÃO DE CANCELAMENTO */
 .container-cancelamento {
     position: relative; /* necessário para ::before */
-    background: linear-gradient(160deg, #0665b9, #005DAC);
+    background: #465EFF;
     color: white;
     padding: 12px 14px 18px;
     box-shadow: 0 3px 10px black;
@@ -104,7 +104,7 @@ body {
 
 /* FAIXA SUPERIOR */
 .faixa-superior {
-    background: #022c4a;
+    background: #3333BD;
     color: #f6f632;
     padding: 8px 12px;
     margin-bottom: 10px;
@@ -210,7 +210,7 @@ strong {
 }
 
 .mensagem {
-    max-width: 360px;   /* controla a largura máxima */
+    max-width: 370px;   /* controla a largura máxima */
     margin: 0 auto;     /* centraliza horizontalmente */
     text-align: justify; /* mantém alinhamento do texto */
 }
