@@ -123,7 +123,7 @@ body {
 }
 
 .badge-curso {
-    background-color: #005DAC;
+    background-color: #3333BD;
     color: #fff;
     position: absolute;
     right: -10px;
@@ -206,7 +206,7 @@ body {
 }
 
 .date-badge {
-    background-color: #005DAC;
+    background-color: #3333BD;
     color: #fff;
     padding: 12px;
     border-radius: 6px;
