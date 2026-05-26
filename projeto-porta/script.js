@@ -69,7 +69,7 @@ function baixarImagem() {
     }).then(canvas => {
         const image = canvas.toDataURL("image/jpeg", 0.9);
         const link = document.createElement('a');
-        link.download = `convite-unibb-${Date.now()}.jpg`;
+        link.download = `Identificação de Porta-${Date.now()}.jpg`;
         link.href = image;
         link.click();
     });
@@ -98,6 +98,6 @@ function baixarPDF() {
         const y = (pageHeight - imgHeight) / 2;
 
         pdf.addImage(imgData, "JPEG", x, y, imgWidth, imgHeight);
-        pdf.save(`convite-unibb-${Date.now()}.pdf`);
+        pdf.save(`Identificação de Porta-${Date.now()}.pdf`);
     });
 }
