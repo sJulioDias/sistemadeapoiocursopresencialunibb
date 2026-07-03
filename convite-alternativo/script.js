@@ -47,6 +47,7 @@ form.addEventListener("submit", (e) => {
     const enderecoSala = value("enderecoSala");
     const cidadeUfValor = value("cidadeUf");
     const prerequisito = value("prerequisitoCurso");
+    const publicoAlvo = value("publicoAlvo"); // <-- NOVO CAMPO
 
     // --- VERIFICAÇÃO DE DATAS ---
     if (new Date(dataFim) < new Date(dataInicio)) {
@@ -69,7 +70,6 @@ form.addEventListener("submit", (e) => {
 
     // Preenche os campos de texto do cartão
     document.getElementById("cursoSpan").textContent = curso;
-    //document.getElementById("cidadeUfSpan").textContent = cidadeUfValor;
     document.getElementById("descricaoCursoSpan").innerText = descricaoCurso;
     document.getElementById("prazoSpan").textContent = formatarDataISOparaBR(prazoInscricao);
 
@@ -97,9 +97,19 @@ form.addEventListener("submit", (e) => {
         boxPrereq.classList.add("hidden");
     }
 
+    // Público-alvo no cartão
+    const boxPublico = document.getElementById("boxPublico");
+    const txtPublico = document.getElementById("cursoPublico");
+    if (publicoAlvo.trim()) {
+        txtPublico.textContent = publicoAlvo;
+        boxPublico.classList.remove("hidden");
+    } else {
+        boxPublico.classList.add("hidden");
+    }
+
     // Gera conteúdo de e-mail e descrição acessível
     gerarEmail(curso, formatarDataISOparaBR(prazoInscricao), cidadeUfValor);
-    gerarDescricao(curso, descricaoCurso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito);
+    gerarDescricao(curso, descricaoCurso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito, publicoAlvo);
 
     // Mostra resultado
     resultado.classList.remove("hidden");
@@ -181,8 +191,10 @@ function gerarEmail(curso, prazo, cidadeUf) {
 }
 
 // FUNÇÃO PARA GERAR DESCRIÇÃO DA IMAGEM (ACESSIBILIDADE)
-function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito) {
+function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito, publicoAlvo) {
     const blocoPrereq = prerequisito ? `\nPré‑requisitos: ${prerequisito}` : "";
+    const blocoPublico = publicoAlvo ? `\nPúblico-alvo: ${publicoAlvo}` : "";
+
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
 Cartão digital com convite para curso presencial estruturado com degradê azul escuro e um cartão claro interno. Exibe insígnias nas cores amarelo e azul com a marca UniBB.
@@ -200,7 +212,7 @@ Data de início: ${formatarDataISOparaBR(dataInicio)}
 Data de término: ${formatarDataISOparaBR(dataFim)}
 Horário: ${horario}
 Local: ${localConcatenado}
-Código FIP/Ponto Eletrônico: ${codigoFip}${blocoPrereq}
+Código FIP/Ponto Eletrônico: ${codigoFip}${blocoPrereq}${blocoPublico}
 
 Processo de inscrição:
 
