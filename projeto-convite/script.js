@@ -47,6 +47,7 @@ form.addEventListener("submit", (e) => {
     const enderecoSala = value("enderecoSala");
     const cidadeUf = value("cidadeUf");
     const prerequisito = selectPrereq.value === "sim" ? value("prerequisitoCurso") : "";
+    const publicoAlvo = value("publicoAlvo"); // NOVO CAMPO
 
     // --- VERIFICAÇÃO DE DATAS ---
     if (new Date(dataFim) < new Date(dataInicio)) {
@@ -73,23 +74,26 @@ form.addEventListener("submit", (e) => {
     document.getElementById("descricaoCursoSpan").innerText = descricaoCurso;
     document.getElementById("prazoSpan").textContent = formatarDataISOparaBR(prazoInscricao);
 
-    // Informações do evento + pré-requisitos juntos
+    // Informações do evento + pré-requisitos + público-alvo
     let infoHTML = `<span class="label">Curso:</span> ${curso}
     <span class="label">Data:</span> ${formatarDataISOparaBR(dataInicio)} a ${formatarDataISOparaBR(dataFim)}
     <span class="label">Horário:</span> ${horario}
     <span class="label">Local:</span> ${localConcatenado}
     <span class="label">Código FIP:</span> ${codigoFip}`;
 
-
     if (selectPrereq.value === "sim" && prerequisito.trim()) {
         infoHTML += `\n<span class="label">Pré‑requisitos:</span><br>${prerequisito}`;
+    }
+
+    if (publicoAlvo.trim()) {
+        infoHTML += `\n<span class="label">Público-alvo:</span><br>${publicoAlvo}`;
     }
 
     document.getElementById("infoEvento").innerHTML = infoHTML;
 
     // Gera conteúdo de e-mail e descrição acessível
-    gerarEmail(curso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip, cidadeUf, prerequisito);
-    gerarDescricao(curso, descricaoCurso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito);
+    gerarEmail(curso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip, cidadeUf);
+    gerarDescricao(curso, descricaoCurso, formatarDataISOparaBR(prazoInscricao), dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito, publicoAlvo);
 
     resultado.classList.remove("hidden");
     resultado.scrollIntoView({ behavior: "smooth" });
@@ -150,14 +154,15 @@ btnAlterarCor.addEventListener("click", () => {
 
 // FUNÇÃO PARA GERAR TÍTULO DO EMAIL
 function gerarEmail(curso, prazo, dataInicio, dataFim, horario, localConcatenado, codigoFip, cidadeUf) {
-        document.getElementById("emailCorpo").value = `
+    document.getElementById("emailCorpo").value = `
 Convite - Curso ${curso} - ${cidadeUf} - Inscreva-se até ${prazo}
 `.trim();
 }
 
 // FUNÇÃO PARA GERAR DESCRIÇÃO DA IMAGEM (ACESSIBILIDADE)
-function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito) {
+function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horario, localConcatenado, codigoFip, prerequisito, publicoAlvo) {
     const blocoPrereq = prerequisito ? `\nPré‑requisitos: ${prerequisito}` : "";
+    const blocoPublico = publicoAlvo ? `\nPúblico-alvo: ${publicoAlvo}` : "";
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
 Cartão digital com convite para curso presencial na cor azul, com o logo da UniBB na cor amarela.
@@ -176,7 +181,7 @@ Data de início: ${formatarDataISOparaBR(dataInicio)}
 Data de término: ${formatarDataISOparaBR(dataFim)}
 Horário: ${horario}
 Local: ${localConcatenado}
-Código FIP/Ponto Eletrônico: ${codigoFip}${blocoPrereq}
+Código FIP/Ponto Eletrônico: ${codigoFip}${blocoPrereq}${blocoPublico}
 
 Processo de inscrição:
 
