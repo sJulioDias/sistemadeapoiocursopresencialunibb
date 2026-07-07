@@ -126,7 +126,7 @@ btnImagem.addEventListener("click", () => {
     htmlElement.style.scrollBehavior = "auto";
 
     html2canvas(cartao, {
-        scale: 1.9,
+        scale: 1.8,
         backgroundColor: corDeFundo,
         useCORS: true,
         logging: false
@@ -135,8 +135,8 @@ btnImagem.addEventListener("click", () => {
 
         // --- DOWNLOAD ---
         const link = document.createElement("a");
-        link.download = "convite-unibb.jpg";
-        link.href = canvas.toDataURL("image/jpg", 0.65);
+        link.download = "convite-unibb.png";
+        link.href = canvas.toDataURL("image/png");
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
