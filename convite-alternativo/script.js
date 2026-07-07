@@ -136,7 +136,7 @@ btnImagem.addEventListener("click", () => {
         // --- DOWNLOAD ---
         const link = document.createElement("a");
         link.download = "convite-unibb.jpg";
-        link.href = canvas.toDataURL("image/jpg", 0.80);
+        link.href = canvas.toDataURL("image/jpg", 0.75);
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
