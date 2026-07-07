@@ -70,7 +70,7 @@ btnImagem.addEventListener("click", () => {
     }).then(canvas => {
         const link = document.createElement("a");
         link.download = "convite-unibb.jpg";
-        link.href = canvas.toDataURL("image/jpeg", 0.95);
+        link.href = canvas.toDataURL("image/jpeg", 0.80);
         link.click();
 
         canvas.toBlob(blob => {
