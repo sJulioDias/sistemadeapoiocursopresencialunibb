@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Convite Livre UniBB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="form-container">
+    <h2>Convite Personalizado</h2>
+
+    <form id="conviteForm">
+        <label>
+            Campo 1 (Saudação)
+            <textarea id="campo1" rows="1" required>Olá, colega!</textarea>
+        </label>
+
+        <label>
+            Campo 2 (Apresentação do curso)
+            <textarea id="campo2" rows="12" required>
+Divulgamos a oferta de vagas para o curso xxxxxxx – modalidade presencial, que ocorrerá na cidade de xxxxxxxxxx/XX.
+
+O curso tem como objetivo de aprendizagem...
+
+Que tal aproveitar esta oportunidade para seu desenvolvimento profissional? Mas atenção, as vagas são limitadas.
+
+Seguem as informações:
+            </textarea>
+        </label>
+
+        <label>
+            Campo 3 (Informações do evento)
+            <textarea id="campo3" rows="10" required>
+Curso: xxxxxxx
+Data: xx/xx/xxxx a xx/xx/xxxx
+Horário: xxh às xxh
+Local: Rua xxxxxxx, n°X - xxxxxxxxxx/XX
+Código FIP: 27X (onde X é a quantidade de horas de treinamento no dia)
+Pré‑requisitos:
+Público-alvo:
+            </textarea>
+        </label>
+
+        <label>
+            Campo 4 (Processo de inscrição)
+            <textarea id="campo4" rows="14" required>
+Processo de inscrição:
+
+1. Negocie sua liberação com sua liderança.
+2. Acesse o Portal Capacita Aqui:
+https://gepesbhz.intranet.bb.com.br/capacitaaqui/
+3. Clique na aba “Participante” e realize sua inscrição, até o dia xx/xx/xxxx.
+4. Após isso, solicite que um/a gestor/a da sua unidade acesse o mesmo link, na aba “Gestor”, para validar sua participação. Este passo é imprescindível! (Vide Tutorial em anexo).
+
+Sua presença fará toda a diferença!
+            </textarea>
+        </label>
+
+        <!-- Botões lado a lado -->
+        <div class="form-buttons">
+            <button type="submit">Gerar convite</button>
+            <button type="button" id="btnLimpar" class="btn-limpar">Limpar tudo</button>
+        </div>
+    </form>
+</section>
+
+<section id="resultado" class="hidden">
+    <div class="resultado-grid">
+
+        <main class="container" id="cartao">
+            <header class="top">
+                <div class="header-right">
+                    <span class="logo-text">UniBB</span>
+                    <img src="../logobb.png" alt="Logo BB" class="logo-img">
+                </div>
+                <h1 id="campo1Span"></h1>
+            </header>
+
+            <p id="campo2Span"></p>
+
+            <!-- Bloco 3 destacado -->
+            <p id="campo3Span" class="box-evento"></p>
+
+            <!-- Bloco 4 com logo lateral -->
+            <div class="bloco-com-logo">
+                <img src="logoB.png" alt="Logo B" class="logo-lateral esquerda">
+                <div class="texto-bloco">
+                    <p id="campo4Span"></p>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="footer-linha-2">Gepes Especializada</div>
+                <div class="footer-linha-1">Educação e Seleção</div>
+            </footer>
+        </main>
+
+        <aside class="email-container">
+            <button id="btnImagem">Copiar e baixar imagem (.JPG)</button>
+            <button id="btnCopiarEmail">Copiar texto do e-mail</button>
+            <button id="btnAlterarCor">Alterar cor do cartão</button>
+            <button id="btnEmail">Compartilhar por e-mail</button>
+            <label for="colorPicker">Escolher cor personalizada:</label>
+            <input type="color" id="colorPicker" value="#022c4a">
+
+            <h3>Título do e-mail</h3>
+            <textarea id="emailCorpo" rows="2"></textarea>
+
+            <h3>Texto e descrição da imagem (acessibilidade)</h3>
+            <textarea id="descricaoImagem" rows="20"></textarea>
+        </aside>
+
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+<a href="../index.html" class="btn-voltar">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+    </svg>
+    Voltar ao Menu
+</a>
+</html>
