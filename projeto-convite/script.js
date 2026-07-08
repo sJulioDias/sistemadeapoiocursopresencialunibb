@@ -171,6 +171,8 @@ Olá, Colega!
 
 Divulgamos a oferta de vagas para o curso "${curso}" – modalidade presencial.
 
+Sobre o Curso:
+
 ${descricaoCurso}
 
 Que tal aproveitar esta oportunidade para seu desenvolvimento profissional? Vagas limitadas.
