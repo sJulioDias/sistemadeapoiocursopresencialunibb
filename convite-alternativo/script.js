@@ -126,7 +126,7 @@ btnImagem.addEventListener("click", () => {
     htmlElement.style.scrollBehavior = "auto";
 
     html2canvas(cartao, {
-        scale: 1.8,
+        scale: 2,
         backgroundColor: corDeFundo,
         useCORS: true,
         logging: false
