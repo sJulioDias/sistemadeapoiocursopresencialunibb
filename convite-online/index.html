@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gerador de Convite turmas online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonte Poppins carregada corretamente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="form-container">
+    <h2>Convite curso Online</h2>
+
+    <form id="conviteForm">
+        <label>
+            Nome do Curso
+            <input type="text" id="curso" placeholder="Ex: Nesep Online" required />
+        </label>
+
+        <label>
+            Data
+            <input type="text" id="dataCurso" placeholder="Ex: 10 a 15/08/2026" required />
+        </label>
+
+        <label>
+            Horário
+            <input type="text" id="horario" placeholder="Ex: 09h às 18h" required />
+        </label>
+
+        <label>
+            Local
+            <input type="text" id="local" placeholder="Ex: Microsoft Teams" value="Microsoft Teams" required />
+        </label>
+
+        <label>
+            Prazo limite de inscrição
+            <input type="text" id="prazoInscricao" placeholder="Ex: 10/07/2026" required />
+        </label>
+
+        <label>
+            Sobre o Curso
+            <textarea id="sobreCurso" rows="5" placeholder="Ex: Esse curso tem como objetivo o desenvolvimento de relacionamento..." required></textarea>
+        </label>
+
+        <button type="submit">Gerar convite</button>
+    </form>
+</section>
+
+<section id="resultado" class="hidden">
+    <div class="resultado-grid">
+
+        <!-- O CARTÃO A SER CAPTURADO (750x1054) -->
+        <main class="cartao-modelo" id="cartao">
+            
+            <div class="decoracao-rosa-topo"></div>
+
+                     <header class="top">
+            <div class="header-right">
+                <span class="logo-text">UniBB</span>
+                <img src="../logobb.png" alt="Logo BB" class="logo-img">
+            </div>
+        </header>
+
+            <!-- Bloco de Título -->
+            <div class="bloco-titulo">
+                <div class="tag-convite">Convite</div>
+                <div class="caixa-branca-titulo">
+                    <h1 id="cursoNomeCard">NESEP ONLINE</h1>
+                </div>
+            </div>
+
+            <!-- Bloco de Data e Horário -->
+            <div class="bloco-data-hora" id="dataHoraCard">
+                10 a 15/08/2026 - 9h às 18h
+            </div>
+
+            <!-- Bloco Local -->
+            <div class="bloco-secao">
+                <div class="tag-secao">Local</div>
+                <div class="caixa-branca-conteudo">
+                    <p class="texto-principal-bold" id="localCard">Microsoft Teams</p>
+                </div>
+            </div>
+
+            <!-- Bloco Sobre -->
+            <div class="bloco-secao">
+                <div class="tag-secao">Sobre o curso</div>
+                <div class="caixa-branca-conteudo pre-linha" id="sobreCard">
+                    Esse curso tem como objetivo o desenvolvimento de relacionamento com o setor público, visando a prospecção de negócios.
+                </div>
+            </div>
+
+            <!-- Bloco Inscrição -->
+            <div class="bloco-secao" style="margin-bottom: 25px;">
+                <div class="tag-secao">Inscrição</div>
+                <div class="caixa-branca-conteudo">
+                    <div class="lista-inscricao">
+                        <p>1. Negocie sua liberação com sua liderança.</p>
+                        <p>2. Acesse o Portal Capacita Aqui.</p>
+                        <p>3. Inscreva-se até <span id="prazoCard">10/07/2026</span>.</p>
+                        <p>4. <strong>Imprescindível:</strong> Solicite a validação do gestor na aba "Gestor" do Portal.</p>
+                        <p><strong>Sua presença fará toda a diferença!</strong></p>
+                    </div>
+                </div>
+            </div>
+
+                        <footer class="footer-corporativo">
+                <div class="footer-linha-2">Gepes Especializada</div>
+                <div class="footer-linha-1">Educação e Seleção</div>
+            </footer>
+
+            <div class="decoracao-rosa-base"></div>
+        </main>
+
+        <!-- FERRAMENTAS LATERAIS -->
+        <aside class="email-container">
+            <button id="btnImagem">Copiar e baixar imagem (.JPG)</button>
+            <button id="btnCopiarEmail">Copiar texto do e-mail</button>
+            <button id="btnEmail">Compartilhar por e-mail</button>
+            <label for="colorPicker">Alterar cor do fundo:</label>
+            <input type="color" id="colorPicker" value="#a3d3f9">
+
+            <h3>Assunto do e-mail</h3>
+            <textarea id="emailAssunto" rows="2"></textarea>
+
+            <h3>Texto e descrição da imagem (acessibilidade)</h3>
+            <textarea id="descricaoImagem" rows="15"></textarea>
+        </aside>
+
+    </div>
+</section>
+
+<!-- Dependência de captura visual -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="script.js"></script>
+
+<!-- Botão Voltar dentro do body -->
+<a href="../index.html" class="btn-voltar">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+    </svg>
+    Voltar ao Menu
+</a>
+
+</body>
+</html>
