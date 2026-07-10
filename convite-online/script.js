@@ -122,7 +122,7 @@ Processo de inscrição obrigatório:
 3. Realize a inscrição oficial na ferramenta até o dia ${prazo}.
 4. Imprescindível: Peça para um gestor validar sua vaga acessando a aba "Gestor/a".
 
-Sua presença fará toda a diferença!
+Aproveite essa oportunidade de desenvolvimento profissional!
 
 `.trim();
 }
