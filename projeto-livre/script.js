@@ -13,25 +13,16 @@ colorPicker.addEventListener("input", () => {
     cartao.style.background = colorPicker.value;
 });
 
-// Função para destacar palavras-chave no bloco 3
-function destacarPalavrasChave(texto) {
-    const palavras = [
-        "Curso:",
-        "Data:",
-        "Horário:",
-        "Local:",
-        "Código FIP:",
-        "Pré‑requisitos:",
-        "Público-alvo:"
-    ];
+// Função para aplicar <strong> em trechos entre ~...~
+function aplicarRealce(texto) {
+    return texto.replace(/~(.*?)~/g, '<strong>$1</strong>');
+}
 
-    let textoFormatado = texto;
-    palavras.forEach(palavra => {
-        const regex = new RegExp(palavra, "gi");
-        textoFormatado = textoFormatado.replace(regex, `<span class="label">${palavra}</span>`);
-    });
-
-    return textoFormatado;
+// Função para preservar quebras de linha e aplicar realce
+function formatarTexto(texto) {
+    let formatado = aplicarRealce(texto);
+    formatado = formatado.replace(/\n/g, "<br>");
+    return formatado;
 }
 
 // SUBMISSÃO DO FORMULÁRIO
@@ -43,13 +34,10 @@ form.addEventListener("submit", (e) => {
     const campo3 = value("campo3");
     const campo4 = value("campo4");
 
-    document.getElementById("campo1Span").textContent = campo1;
-    document.getElementById("campo2Span").innerText = campo2;
-
-    // Aplica destaque ao bloco 3
-    document.getElementById("campo3Span").innerHTML = destacarPalavrasChave(campo3);
-
-    document.getElementById("campo4Span").innerText = campo4;
+    document.getElementById("campo1Span").innerHTML = aplicarRealce(campo1);
+    document.getElementById("campo2Span").innerHTML = formatarTexto(campo2);
+    document.getElementById("campo3Span").innerHTML = formatarTexto(campo3);
+    document.getElementById("campo4Span").innerHTML = formatarTexto(campo4);
 
     gerarEmail(campo1, campo2);
     gerarDescricao(campo1, campo2, campo3, campo4);
@@ -182,4 +170,33 @@ btnLimpar.addEventListener("click", () => {
 
     // Oculta novamente a seção de resultado
     resultado.classList.add("hidden");
+});
+
+// BOTÃO PARA REALÇAR SELEÇÃO
+const btnRealcar = document.getElementById("btnRealcar");
+btnRealcar.addEventListener("click", () => {
+    const campos = ["campo1", "campo2", "campo3", "campo4"];
+    let campoAtivo = null;
+
+    // Procura o campo que tem uma seleção válida
+    campos.forEach(id => {
+        const el = document.getElementById(id);
+        if (el.selectionStart !== el.selectionEnd) {
+            campoAtivo = el;
+        }
+    });
+
+    if (!campoAtivo) {
+        alert("Selecione um trecho de texto em algum campo para realçar.");
+        return;
+    }
+
+    const inicio = campoAtivo.selectionStart;
+    const fim = campoAtivo.selectionEnd;
+    const texto = campoAtivo.value;
+    const selecionado = texto.substring(inicio, fim);
+
+    // Envolve o trecho selecionado com ~...~
+    const novoTexto = texto.substring(0, inicio) + "~" + selecionado + "~" + texto.substring(fim);
+    campoAtivo.value = novoTexto;
 });
