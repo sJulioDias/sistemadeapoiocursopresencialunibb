@@ -290,4 +290,47 @@ strong {
     }
 }
 
+.realce {
+    background-color: #f6f632;
+    color: #022c4a;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
 
+/* Botão amarelo para realçar */
+.btn-realcar {
+    background: #f6f632;
+    color: #022c4a;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-realcar:hover {
+    background: #dcdc28; /* tom mais escuro no hover */
+}
+
+/* Aviso de realce */
+.aviso-realce {
+    background: rgba(246, 246, 50, 0.2); /* fundo amarelo suave */
+    color: #022c4a; /* azul escuro para contraste */
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-left: 4px solid #f6f632; /* barra lateral amarela */
+    border-radius: 6px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.aviso-realce::before {
+    content: "⚡"; /* ícone extra para chamar atenção */
+    color: #f6f632;
+    font-size: 14px;
+}
