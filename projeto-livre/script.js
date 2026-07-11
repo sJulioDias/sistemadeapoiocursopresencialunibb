@@ -200,3 +200,15 @@ btnRealcar.addEventListener("click", () => {
     const novoTexto = texto.substring(0, inicio) + "~" + selecionado + "~" + texto.substring(fim);
     campoAtivo.value = novoTexto;
 });
+
+function alterarFonte(id, delta) {
+    const el = document.getElementById(id);
+    const estilo = window.getComputedStyle(el);
+    let tamanhoAtual = parseFloat(estilo.fontSize);
+    el.style.fontSize = (tamanhoAtual + delta) + "px";
+}
+
+function restaurarFonte(id) {
+    const el = document.getElementById(id);
+    el.style.fontSize = ""; // remove estilo inline e volta ao padrão do CSS
+}
