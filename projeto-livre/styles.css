@@ -334,3 +334,32 @@ strong {
     color: #f6f632;
     font-size: 14px;
 }
+
+.font-controls {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.font-controls button {
+    background: #f6f632;
+    color: #022c4a;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.font-controls button:hover {
+    background: #dcdc28;
+}
+
+.font-controls button:last-child {
+    background: #04324f;
+    color: #fff;
+}
+
+.font-controls button:last-child:hover {
+    background: #022c4a;
+}
