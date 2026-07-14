@@ -47,14 +47,57 @@ header.shrink {
 header.shrink .icon-header { font-size: 1.5rem; }
 header.shrink h1 { font-size: 1.4rem; }
 
+/* Container antigo substituído pelas seções */
 .container {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 120px 20px 40px;
+  display: none;
 }
 
+/* Menu de seleção das seções - agora lateral esquerda */
+.menu-secoes {
+  position: fixed;
+  top: 120px; /* abaixo do header */
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 900;
+}
+
+/* Botões maiores e destacados */
+.menu-secoes button {
+  background: #f6f632;
+  border: none;
+  padding: 18px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: #022c4a;
+  width: 200px; /* largura fixa para alinhamento */
+  text-align: left; /* texto alinhado à esquerda */
+}
+
+.menu-secoes button:hover {
+  background: #022c4a;
+  color: white;
+  transform: translateX(5px);
+}
+
+/* Ajuste das seções de cards para não ficarem escondidas atrás do menu */
+/* Seções de cards */
+.card-section {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 120px 20px 40px; /* aumentei o padding-top para 80px */
+  margin-left: 250px; /* espaço para o menu lateral */
+}
+
+
+
+/* Estilo dos cards */
 .card {
   background: white;
   color: #022c4a;
@@ -80,7 +123,7 @@ header.shrink h1 { font-size: 1.4rem; }
 .card p { font-size: 0.95rem; color: #444; line-height: 1.4; }
 .icon { font-size: 40px; margin-bottom: 15px; }
 
-/* Cards Especiais (Construção e Cancelamento agrupados) */
+/* Cards Especiais */
 .card.construcao,
 .card.cancelamento {
   background: #e0e0e0;
@@ -96,7 +139,7 @@ header.shrink h1 { font-size: 1.4rem; }
 .card.construcao h2 { color: #333; }
 .card.construcao p strong { color: #c00; }
 
-/* Base comum para as fitas superiores dos cards */
+/* Fitas superiores */
 .card.construcao::before,
 .card.cancelamento::before {
   position: absolute;
@@ -119,7 +162,7 @@ header.shrink h1 { font-size: 1.4rem; }
   background: #dc3545;
 }
 
-/* Botão de menu sem fundo */
+/* Botão de menu */
 #toggleMenu {
   background: transparent;
   border: none;
