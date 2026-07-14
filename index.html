@@ -10,41 +10,76 @@
 
   <header>
     <div class="header-content">
-      <!-- O botão agora fica aqui dentro -->
       <button id="toggleMenu">☰</button> 
       <span class="icon-header">🏛️</span>
       <h1>Gerador de Cards - Cursos Presenciais/Online UniBB</h1>
     </div>
   </header>
 
-  <!-- Botão e menu lateral -->
+  <!-- Menu lateral -->
   <nav id="sidebar">
     <ul>
-      <li><a href="projeto-participante/index.html">🎓 Confirmação Participante (Presencial) </a></li>
-      <li><a href="confirmacao-online/index.html">🎓 Confirmação Participante (Online) </a></li>
+      <li><a href="projeto-participante/index.html">🎓 Confirmação Participante (Presencial)</a></li>
+      <li><a href="confirmacao-online/index.html">🎓 Confirmação Participante (Online)</a></li>
       <li><a href="projeto-educador/index.html">👨‍🏫 Confirmação Educador/a</a></li>
       <li><a href="projeto-porta/index.html">🚪 Identificação de Porta</a></li>
       <li><a href="projeto-convite/index.html">✉️ Convite Participante</a></li>
-      <li><a href="convite-alternativo/index.html">🌟Folheto de divulgação</a></li>
+      <li><a href="convite-alternativo/index.html">🌟 Folheto de divulgação</a></li>
       <li><a href="projeto-livre/index.html">🪪 Convite Personalizado</a></li>
       <li><a href="projeto-cancelamento/index.html">❌ Cancelamento de Turma</a></li>
       <li><a href="projeto-esgotadas/index.html">📢 Vagas Esgotadas</a></li>
-      <li><a href="convite-online/index.html">💻 Convite Participante Online</a></li>
       <li><a href="aviso-indisponivel.html">🛫🏨 Aviso Hospedagem/Aéreo</a></li>
       <li><a href="https://gepesbhz.intranet.bb.com.br/portaldoaluno/">🏛️ Portal do Aluno</a></li>
     </ul>
   </nav>
 
-  <div class="container">
+  <!-- Menu de seleção de seções -->
+  <div class="menu-secoes">
+    <button onclick="mostrarSecao('convite')">Convite</button>
+    <button onclick="mostrarSecao('confirmacao')">Confirmação</button>
+    <button onclick="mostrarSecao('comunicados')">Comunicados</button>
+  </div>
+
+  <!-- Seções de cards -->
+  <div id="convite" class="card-section">
+    <a href="projeto-convite/index.html" class="card">
+      <div class="icon">✉️</div>
+      <h2>Convite Participante (E-mail)</h2>
+      <p>Gerar cartão de convite para turmas presenciais.</p>
+    </a>
+
+    <a href="convite-alternativo/index.html" class="card">
+      <div class="icon">🌟</div>
+      <h2>Folheto de divulgação (Teams)</h2>
+      <p>Gerar folheto para divulgação de cursos presenciais.</p>
+    </a>
+
+    <a href="projeto-livre/index.html" class="card construcao">
+      <div class="icon">🪪</div>
+      <h2>Convite Personalizado</h2>
+      <p>Gerar convite para uso geral, com todos os campos editáveis.</p>
+    </a>
+
+    <!-- 
+    <a href="convite-online/index.html" class="card construcao">
+      <div class="icon">💻</div>
+      <h2>Convite Participante Online</h2>
+      <p>Gerar convite para turmas realizadas em ambiente virtual.</p>
+    </a>
+    -->
+
+  </div>
+
+  <div id="confirmacao" class="card-section">
     <a href="projeto-participante/index.html" class="card">
       <div class="icon">🎓</div>
-      <h2>Confirmação Participante<br>(Presencial)</h2>
+      <h2>Confirmação Participante (Presencial)</h2>
       <p>Gerar cartão de confirmação para alunos/as de cursos presenciais.</p>
     </a>
 
     <a href="confirmacao-online/index.html" class="card">
       <div class="icon">🎓</div>
-      <h2>Confirmação Participante<br>(Online)</h2>
+      <h2>Confirmação Participante (Online)</h2>
       <p>Gerar cartão de confirmação para alunos/as de cursos Online.</p>
     </a>
 
@@ -53,29 +88,13 @@
       <h2>Confirmação Educador/a</h2>
       <p>Gerar comunicado para atuação de educadores titulares.</p>
     </a>
+  </div>
 
+  <div id="comunicados" class="card-section">
     <a href="projeto-porta/index.html" class="card">
       <div class="icon">🚪</div>
       <h2>Identificação de Porta</h2>
       <p>Gerar placa de boas-vindas e identificação para salas de aula.</p>
-    </a>
-
-    <a href="projeto-convite/index.html" class="card">
-      <div class="icon">✉️</div>
-      <h2>Convite Participante <br>(E-mail)</h2>
-      <p>Gerar cartão de convite para turmas presenciais.<br></p>
-    </a>
-
-    <a href="convite-alternativo/index.html" class="card">
-      <div class="icon">🌟</div>
-      <h2>Folheto de divulgação <br> (Teams)</h2>
-      <p>Gerar folheto para divulgação de cursos presenciais.</p>
-    </a>
-
-    <a href="projeto-livre/index.html" class="card construcao">
-      <div class="icon">🪪</div>
-      <h2>Convite Personalizado</h2>
-      <p>Gerar convite para uso geral, com todos os campos editáveis.</p>
     </a>
 
     <a href="projeto-cancelamento/index.html" class="card construcao">
@@ -90,20 +109,13 @@
       <p>Gerar cartão de aviso de vagas esgotadas.</p>
     </a>
 
-    <a href="convite-online/index.html" class="card construcao">
-  <div class="icon">💻</div>
-  <h2>Convite Participante Online</h2>
-  <p>Gerar convite para turmas realizadas em ambiente virtual.</p>
-    </a>
-
     <a href="aviso-indisponivel.html" class="card cancelamento">
       <div class="icon">🛫🏨</div>
       <h2>Aviso de Hospedagem/Aéreo</h2>
       <p>Gerar comunicado sobre hospedagem e passagens aéreas para participantes.</p>
-    </a>    
-
+    </a>
   </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
