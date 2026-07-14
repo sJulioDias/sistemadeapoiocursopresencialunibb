@@ -23,3 +23,16 @@ document.addEventListener("click", (event) => {
     sidebar.classList.remove("open");
   }
 });
+
+// Função para mostrar apenas a seção escolhida
+function mostrarSecao(secao) {
+  document.querySelectorAll('.card-section').forEach(div => {
+    div.style.display = 'none';
+  });
+  document.getElementById(secao).style.display = 'flex';
+}
+
+// Exibir "Convite" por padrão ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+  mostrarSecao('convite');
+});
