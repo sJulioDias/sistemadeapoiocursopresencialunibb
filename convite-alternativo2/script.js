@@ -192,7 +192,7 @@ function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horar
 
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
-Cartão digital com convite para curso presencial estruturado com degradê azul escuro e um cartão claro interno. Exibe insígnias nas cores amarelo e azul com a marca UniBB.
+Cartão digital com convite para curso presencial estruturado com degradê roxo escuro e um cartão claro interno. Exibe insígnias nas cores amarelo e roxa com a marca UniBB.
 
 "${curso}" – modalidade presencial.
 
