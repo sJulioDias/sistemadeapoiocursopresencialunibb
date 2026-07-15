@@ -127,14 +127,9 @@ ativarDeslocamento.addEventListener("change", () => {
     secaoDeslocamento.style.display = ativarDeslocamento.checked ? "block" : "none";
 });
 
-// FUNÇÃO PARA GERAR TÍTULO DO EMAIL (agora inclui deslocamento se ativo)
+// FUNÇÃO PARA GERAR TÍTULO DO EMAIL
 function gerarEmail(curso, dia, datasEvento, localConcatenado, codigoFip, cidadeUf) {
     let assunto = `Educador/a - Convite Atuação Curso ${curso} - ${cidadeUf} - Responder até ${dia}`;
-    
-    if (ativarDeslocamento.checked) {
-        assunto += " (com deslocamento)";
-    }
-
     document.getElementById("emailCorpo").value = assunto.trim();
 }
 
