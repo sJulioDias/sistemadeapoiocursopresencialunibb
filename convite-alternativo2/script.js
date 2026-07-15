@@ -182,7 +182,7 @@ btnAlterarCor.addEventListener("click", () => {
 
 // FUNÇÃO PARA GERAR TÍTULO DO EMAIL
 function gerarEmail(curso, prazo, cidadeUf) {
-    document.getElementById("emailCorpo").value = `Convite - Curso ${curso} - ${cidadeUf} - Inscreva-se até ${prazo}`.trim();
+    document.getElementById("emailCorpo").value = `Divulgação de vagas - Curso ${curso} - ${cidadeUf} - Inscreva-se até ${prazo}`.trim();
 }
 
 // FUNÇÃO PARA GERAR DESCRIÇÃO DA IMAGEM (ACESSIBILIDADE)
