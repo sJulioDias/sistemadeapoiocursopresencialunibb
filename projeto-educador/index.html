@@ -52,6 +52,13 @@
             <input type="text" id="codigoFip" value="FIP 209" required />
         </label>
 
+        <!-- NOVA CHAVE DE DESLOCAMENTO -->
+         <p>Ativar/Desativar Seção de Deslocamento</p>
+        <label class="switch">
+            <input type="checkbox" id="ativarDeslocamento" checked>
+            <span class="slider round"></span>
+        </label>
+
         <button type="submit">Gerar comunicado</button>
     </form>
 </section>
@@ -117,8 +124,10 @@
                 <li>Despacho: Plataforma BB &gt; Pessoas &gt; Minha Visão &gt; Ausências e Afastamentos &gt; Planejamento de Ausências</li>
             </ul>
 
-            <div class="obs-title">ATENÇÃO!</div>
-            <p>Caso tenha necessidade de deslocamento e hospedagem, acesse o card em anexo <br> para orientações.</p>
+            <div id="secaoDeslocamento">
+                <div class="obs-title">ATENÇÃO!</div>
+                <p>Caso tenha necessidade de deslocamento e hospedagem, acesse o card em anexo <br> para orientações.</p>
+            </div>
 
             <footer class="footer">
                 <div class="footer-linha-1">Gepes Especializada</div>
