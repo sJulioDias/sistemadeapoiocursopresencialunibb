@@ -218,3 +218,23 @@ header.shrink #toggleMenu {
   background: rgba(255, 255, 255, 0.1);
   border-left: 4px solid #f6f632;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(2, 44, 74, 0.95);
+  color: #f6f632;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+footer p {
+  margin: 0;
+}
+
