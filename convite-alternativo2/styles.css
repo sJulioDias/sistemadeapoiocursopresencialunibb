@@ -1,0 +1,452 @@
+@font-face {
+    font-family: 'Banco';
+    src: url(../BancoDoBrasilTextos-Regular.ttf) format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Banco', Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(160deg, #022c4a, #04324f);
+    color: #fff;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.form-container {
+    max-width: 460px;
+    margin: 40px auto;
+    background: #fff;
+    color: #000;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #022c4a;
+    font-weight: 700;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: #04324f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-container button:hover {
+    background: #022c4a;
+}
+
+.resultado-grid {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 580px 420px;
+    gap: 30px;
+    justify-content: center;
+    align-items: start;
+}
+
+.card-container {
+    background: linear-gradient(160deg, #735CC6, #5741a5);
+    width: 100%;
+    max-width: 580px;
+    padding: 40px 30px 30px 30px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.main-card {
+    background-color: #fcfbf2;
+    border-radius: 10px;
+    padding: 45px 25px 25px 25px;
+    position: relative;
+    margin-top: 10px;
+    color: #333;
+}
+
+.badge-participe {
+    background-color: #f6f632;
+    color: #022c4a;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 6px 25px;
+    border-radius: 10px;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.badge-curso {
+    background-color: #5741a5;
+    color: #fff;
+    position: absolute;
+    right: -10px;
+    top: 40px;
+    padding: 12px 6px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-size: 11px;
+        writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.main-card h1 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    color: #022c4a;
+    text-align: left;
+}
+
+.sub-header {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.text-blue {
+    color: #005DAC !important;
+}
+
+.objective-section {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.objective-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #022c4a;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.objective-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    text-align: justify;
+    white-space: pre-line;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.info-box-left {
+    background-color: rgba(2, 44, 74, 0.05);
+    border-left: 4px solid #5741a5;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.info-box-left strong {
+    color: #022c4a !important;
+    font-weight: 700;
+}
+
+.date-badge {
+    background-color: #5741a5;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.date-main {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.date-sub {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 4px;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.bloco-com-logo {
+    margin-top: 25px;
+    padding: 0 5px;
+    text-align: left;
+}
+
+.instructor-label {
+    font-size: 12px;
+    color: #f6f632;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.inscricao-lista {
+    color: #fff;
+    font-size: 13px;
+    padding-left: 18px;
+    line-height: 1.7;
+}
+
+.inscricao-lista li {
+    margin-bottom: 8px;
+}
+
+.inscricao-lista strong {
+    color: #f6f632 !important;
+}
+
+.chamada-final {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.footer-corporativo {
+    text-align: center;
+    color: #fff;
+    margin-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 15px;
+    font-size: 12px;
+}
+
+.footer-linha-1 {
+    opacity: 0.8;
+    font-size: 13px;
+}
+
+.footer-linha-2 {
+    color: #f6f632;
+    font-weight: 700;
+    margin-top: 3px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.highlight {
+    background-color: #f6f632;
+    color: #022c4a;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.highlight2 {
+    color: #022c4a;
+    font-weight: 700;
+}
+
+.email-container {
+    background: linear-gradient(160deg, #0b4a75, #0f5e94);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.email-container h3 {
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #f6f632;
+}
+
+.email-container textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    color: #000;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.email-container button {
+    width: 100%;
+    padding: 12px;
+    background: #032a43;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.email-container button:hover {
+    background: #021d33;
+}
+
+#colorPicker {
+    margin-top: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+.email-container label {
+    font-size: 12px;
+    font-weight: 600;
+    display: block;
+}
+
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #f6f632;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: 1px solid #f6f632;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(2, 44, 74, 0.6);
+    z-index: 100;
+}
+
+.btn-voltar:hover {
+    background: #f6f632;
+    color: #022c4a;
+}
+
+@media (max-width: 1040px) {
+    .resultado-grid {
+        grid-template-columns: 1fr;
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .btn-voltar {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+        display: inline-flex;
+    }
+    .card-container {
+        padding: 30px 15px 20px 15px;
+    }
+    .info-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.header-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-text {
+    color: #f6f632;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.logo-img {
+    width: 20px;
+    height: auto;
+}
+
+.participar-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1px;
+}
+
+.texto-bloco {
+    flex: 2;
+}
+
+.imagem-bloco img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
