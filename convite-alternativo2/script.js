@@ -196,7 +196,7 @@ Cartão digital com convite para curso presencial estruturado com degradê azul 
 
 "${curso}" – modalidade presencial.
 
-Olá! Temos uma nova turma na região. Aproveite esta oportunidade para seu desenvolvimento profissional! Mas atenção, as vagas são limitadas.
+Olá! Estão abertas as inscrições para uma nova turma. Aproveite esta oportunidade para seu desenvolvimento profissional!
 
 Sobre o curso:
 ${descricaoCurso}
