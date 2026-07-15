@@ -16,7 +16,6 @@ function formatarDataISOparaBR(dataISO) {
 
 // INPUT COLOR PARA PERSONALIZAÇÃO
 const colorPicker = document.getElementById("colorPicker");
-
 colorPicker.addEventListener("input", () => {
     const corEscolhida = colorPicker.value;
     cartao.style.background = corEscolhida;
@@ -116,16 +115,32 @@ btnAlterarCor.addEventListener("click", () => {
     cartao.style.background = cores[indiceCor];
 });
 
-// FUNÇÃO PARA GERAR TÍTULO DO EMAIL (agora inclui cidade/UF)
+// TOGGLE DE DESLOCAMENTO
+const ativarDeslocamento = document.getElementById("ativarDeslocamento");
+const secaoDeslocamento = document.getElementById("secaoDeslocamento");
+
+// Estado inicial
+secaoDeslocamento.style.display = ativarDeslocamento.checked ? "block" : "none";
+
+// Listener para toggle
+ativarDeslocamento.addEventListener("change", () => {
+    secaoDeslocamento.style.display = ativarDeslocamento.checked ? "block" : "none";
+});
+
+// FUNÇÃO PARA GERAR TÍTULO DO EMAIL (agora inclui deslocamento se ativo)
 function gerarEmail(curso, dia, datasEvento, localConcatenado, codigoFip, cidadeUf) {
-    document.getElementById("emailCorpo").value = `
-Educador/a - Convite Atuação Curso ${curso} - ${cidadeUf} - Responder até ${dia}
-`.trim();
+    let assunto = `Educador/a - Convite Atuação Curso ${curso} - ${cidadeUf} - Responder até ${dia}`;
+    
+    if (ativarDeslocamento.checked) {
+        assunto += " (com deslocamento)";
+    }
+
+    document.getElementById("emailCorpo").value = assunto.trim();
 }
 
 // FUNÇÃO PARA GERAR DESCRIÇÃO DA IMAGEM (ACESSIBILIDADE)
 function gerarDescricao(nome, curso, dia, diaPrevio, datasEvento, localConcatenado, codigoFip) {
-    document.getElementById("descricaoImagem").value = `
+    let descricao = `
 #Paratodosverem
 Cartão digital na cor azul e logotipo da UniBB em amarelo. Possui as informações de curso e instruções.
 
@@ -143,17 +158,26 @@ Código FIP/Ponto Eletrônico: ${codigoFip}
 - Ausência deve ser registrada e despachada na Plataforma BB.
 - Registro: Plataforma BB > Pessoas > Minha Visão > Ausências e Afastamentos > Planejamento de Ausências > Adicionar Ausência > Motivo: EDUCADOR – DIPES
 - Despacho: Plataforma BB > Pessoas > Minha Visão > Ausências e Afastamentos > Planejamento de Ausências
+`;
+
+    if (ativarDeslocamento.checked) {
+        descricao += `
 
 Caso tenha necessidade de deslocamento e hospedagem, acesse o card em anexo para orientações.
+`;
+    }
+
+    descricao += `
 
 Atenciosamente,
 Gepes Especializada Educação e Seleção
+`;
 
-`.trim();
+    document.getElementById("descricaoImagem").value = descricao.trim();
 }
 
+// BOTÃO PARA COMPARTILHAR POR EMAIL
 const btnEmail = document.getElementById("btnEmail");
-
 btnEmail.addEventListener("click", () => {
     html2canvas(cartao, { scale: 2 }).then(canvas => {
         canvas.toBlob(blob => {
