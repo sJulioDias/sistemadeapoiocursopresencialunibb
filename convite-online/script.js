@@ -121,6 +121,7 @@ Processo de inscrição obrigatório:
 2. Acesse a intranet através do Portal Capacita Aqui, https://gepesbhz.intranet.bb.com.br/capacitaaqui/
 3. Realize a inscrição oficial na ferramenta até o dia ${prazo}.
 4. Imprescindível: Peça para um gestor validar sua vaga acessando a aba "Gestor/a".
+5. Aguarde e-mail Gepes Especializada Educação e Seleção confirmando a sua participação.
 
 Aproveite essa oportunidade de desenvolvimento!
 
