@@ -176,13 +176,13 @@ body {
 
 .bloco-data-hora {
     align-self: center;
-    background-color: #f6f632;
+    background-color: #fff;   /* fundo branco */
     border: 3.5px solid #000;
     border-radius: 25px;
     padding: 10px 45px;
     font-weight: 700;
     font-size: 21px;
-    color: #000;
+    color: #000;              /* texto preto */
     text-align: center;
     box-shadow: 0px 4px 0px #000;
     margin-top: -10px;
@@ -391,4 +391,10 @@ body {
     margin-top: 3px;
     font-size: 20px;
     letter-spacing: 0.5px;
+}
+
+.bloco-data-hora i {
+    margin-right: 6px;
+    color: #000;
+    font-size: 22px;
 }
