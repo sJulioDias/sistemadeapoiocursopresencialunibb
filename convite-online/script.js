@@ -26,7 +26,11 @@ form.addEventListener("submit", (e) => {
 
     // Alimenta os elementos do cartão visual
     document.getElementById("cursoNomeCard").textContent = curso.toUpperCase();
-    document.getElementById("dataHoraCard").textContent = `${dataCurso} - ${horario}`;
+    document.getElementById("dataHoraCard").innerHTML = `
+    <i class="fa-solid fa-calendar-days"></i> ${dataCurso} 
+    &nbsp;&nbsp; 
+    <i class="fa-solid fa-clock"></i> ${horario}
+`;
     document.getElementById("localCard").textContent = local;
     document.getElementById("sobreCard").textContent = sobreCurso; // ✅ agora usa textContent
     document.getElementById("prazoCard").textContent = prazoInscricao;
