@@ -213,7 +213,7 @@ Processo de inscrição:
 
 1. Negocie sua liberação com sua liderança.
 2. Acesse o Portal Capacita Aqui, https://gepesbhz.intranet.bb.com.br/capacitaaqui/.
-3. Clique na aba “Participante” e realize sua inscrição, até o dia ${prazo}.
+3. Clique na aba “Agenda de cursos” e realize sua inscrição, até o dia ${prazo}.
 4. Após isso, solicite que um/a gestor/a da sua unidade acesse o mesmo link, na aba “Validação Gestor/a”, para validar sua participação. Este passo é imprescindível! (Vide Tutorial em anexo).
 5. Aguarde e-mail da Gepes Especializada Educação e Seleção confirmando a sua participação.
 
