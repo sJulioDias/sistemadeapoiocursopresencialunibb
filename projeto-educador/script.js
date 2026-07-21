@@ -142,7 +142,7 @@ Cartão digital na cor azul e logotipo da UniBB em amarelo. Possui as informaç�
 Olá, ${nome}!
 
 Recebemos sua manifestação de interesse e validamos sua atuação como educador/a titular no curso "${curso}".
-A autorização da atuação deve ser liberada pelo/a Gestor/a no Portal Capacita Aqui, aba Gestor.
+A autorização da atuação deve ser liberada pelo/a Gestor/a no Portal Capacita Aqui, aba Validação Gestor/a.
 
 Dia limite para autorização: ${dia}
 Dia prévio: ${diaPrevio}
