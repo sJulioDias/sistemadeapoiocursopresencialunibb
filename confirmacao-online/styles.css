@@ -56,6 +56,10 @@ body {
     margin-top: 15px;
 }
 
+p {
+    line-height: 1.3;   /* aumenta o espaço entre linhas */
+}
+
 /* FORMULÁRIO */
 .form-container {
     max-width: 420px;
