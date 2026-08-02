@@ -30,23 +30,22 @@ body {
 
 /* NOVO POSICIONAMENTO DA LOGO E TEXTO JUNTOS */
 .header-right {
-    position: relative;        /* remove o absolute */
+    position: relative;
     display: flex;
-    justify-content: flex-end; /* joga para a direita dentro do container */
+    justify-content: flex-end;
     align-items: center;
     gap: 8px;
-    margin-right: 0;           /* garante alinhamento com as bordas do cartão */
+    margin-right: 0;
 }
 
 .logo-text {
     color: #f6f632;
     font-weight: bold;
     font-size: 18px;
-
 }
 
 .logo-img {
-    width: 16px; /* Ajuste o tamanho se preferir maior ou menor */
+    width: 16px;
     height: auto;
 }
 
@@ -98,18 +97,20 @@ body {
 /* RESULTADO E GRID */
 .resultado-grid {
     margin-top: 30px;
-    display: grid;
-    grid-template-columns: 420px 1fr;
+    display: flex;              /* Alterado de grid para flex */
     gap: 30px;
     justify-content: center;
+    align-items: flex-start;    /* Cada coluna com altura independente */
 }
 
 /* CARD VISUAL (O elemento que será capturado) */
 .container {
     background: linear-gradient(160deg, #062f4f, #04324f);
     padding: 20px;
-    width: 420px;           /* Largura fixa ajuda na precisão do html2canvas */
-    overflow: hidden;       /* Evita que elementos vazem no print */
+    width: 420px;
+    overflow: hidden;
+    height: auto;               /* Altura só depende do conteúdo */
+    align-self: start;          /* Fixa no topo */
 }
 
 .box {
@@ -118,7 +119,6 @@ body {
     padding: 16px;
     margin-bottom: 16px;
     font-size: 14px;
-    line-height: 1.5; /* aumenta o espaçamento entre linhas */
 }
 
 .info strong, #cursoTitulo, .destaque {
@@ -215,10 +215,10 @@ input:checked + .slider:before {
 /* RESPONSIVIDADE */
 @media (max-width: 900px) {
     .resultado-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column; /* No mobile, empilha */
     }
     .container {
-        width: 100%;        /* No mobile o card ocupa a tela toda */
+        width: 100%;
         max-width: 420px;
     }
 }
@@ -230,7 +230,7 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #f6f632; /* Amarelo UniBB */
+    color: #f6f632;
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
@@ -238,8 +238,8 @@ input:checked + .slider:before {
     border: 1px solid #f6f632;
     border-radius: 8px;
     transition: all 0.3s ease;
-    background: rgba(2, 44, 74, 0.5); /* Fundo semi-transparente */
-    z-index: 100; /* Garante que fique acima de tudo */
+    background: rgba(2, 44, 74, 0.5);
+    z-index: 100;
 }
 
 .btn-voltar:hover {
@@ -247,7 +247,6 @@ input:checked + .slider:before {
     color: #022c4a;
 }
 
-/* Esconde o botão na hora de gerar o formulário no mobile se necessário */
 @media (max-width: 600px) {
     .btn-voltar {
         position: relative;
