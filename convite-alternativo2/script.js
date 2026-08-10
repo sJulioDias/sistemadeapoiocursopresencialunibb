@@ -194,7 +194,7 @@ function gerarDescricao(curso, descricaoCurso, prazo, dataInicio, dataFim, horar
 #Paratodosverem
 Cartão digital com convite para curso presencial estruturado com degradê roxo escuro e um cartão claro interno. Exibe insígnias nas cores amarelo e roxa com a marca UniBB.
 
-"${curso}" – modalidade presencial.
+"${curso}" – modalidade online.
 
 Olá! Estão abertas as inscrições para uma nova turma. Aproveite esta oportunidade para seu desenvolvimento profissional!
 
