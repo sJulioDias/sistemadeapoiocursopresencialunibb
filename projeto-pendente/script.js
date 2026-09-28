@@ -236,7 +236,7 @@ function gerarDescricao(curso, cidadeUf, periodo) {
     document.getElementById("descricaoImagem").value = `
 #Paratodosverem
 
-Olá, Gestor!
+Olá, Gestor/a!
 
 Um funcionário de sua dependência manifestou interesse em ampliar seus conhecimentos participando do curso "${curso}", que acontecerá em ${cidadeUf}, no período de ${periodo}.
 
