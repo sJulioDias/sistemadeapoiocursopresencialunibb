@@ -246,7 +246,7 @@ Com o seu incentivo, o time se engaja e os resultados aparecem: funcionários ma
 
 Ao desenvolver sua equipe, você também fortalece sua liderança e impulsiona o desempenho da dependência.
 
-Para autorizar a matrícula, acesse o Portal Capacita Aqui e realize a validação na aba "Validação Gestor/a".
+Para autorizar a matrícula, acesse o Portal Capacita Aqui (https://gepesbhz.intranet.bb.com.br/capacitaaqui/) e realize a validação na aba "Validação Gestor/a".
 
 Seu apoio faz a diferença!
 
