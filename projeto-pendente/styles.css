@@ -74,20 +74,20 @@ body {
 
 /* CARTÃO DE CANCELAMENTO */
 .container-cancelamento {
-    background: #23239a;
+    background: #465eff;
     color: white;
     padding: 20px;
     box-shadow: 0 3px 10px black;
     font-size: 14px;
     line-height: 1.4;
     max-width: 950px;
-    height: 465px;
+    height: 460px;
     margin: 20px auto;
 }
 
 /* FAIXA SUPERIOR */
 .faixa-superior {
-    background: #20208b;
+    background: #3043bd;
     color: #f6f632;
     padding: 8px 12px;
     margin-bottom: 10px;
