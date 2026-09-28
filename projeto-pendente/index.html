@@ -34,6 +34,15 @@
             <input type="text" id="periodo" placeholder="Ex: 10 a 12 de junho de 2026" required />
         </label>
 
+        <label>
+            Informações adicionais sobre o curso (opcional)
+            <textarea
+                id="informacoesAdicionais"
+                rows="5"
+                placeholder="Ex: Objetivo Geral de Aprendizagem, Desempenho Esperado no Trabalho, etc"
+            ></textarea>
+        </label>
+
         <button type="submit">Gerar comunicado</button>
     </form>
 </section>
@@ -54,10 +63,10 @@
                 <div class="mensagem">
                     <p>Olá, Gestor!</p>
                     <p>Um funcionário de sua dependência manifestou interesse em participar do curso <strong id="cursoSpan"></strong>, que irá ocorrer na cidade de <strong id="cidadeUfSpan"></strong> de <strong id="periodoSpan"></strong>.</p>
-                    <p>Gostariamos de verificar a sua autorização para a matrícula.</p>
+                    <p>Que tal apoiar esse desenvolvimento?</p>
                     <p>Com o seu incentivo, o time se engaja e os resultados aparecem: <strong>funcionários mais qualificados</strong> e <strong>clientes mais satisfeitos</strong>.</p>
                     <p>Ao desenvolver sua equipe, você também fortalece sua liderança e impulsiona o desempenho da dependência.</p>
-                    <p>A inscrição pode ser validada no <strong>Portal Capacita Aqui</strong>, na aba "Validação Gestor/a".</p>
+                    <p> Para autorizar a matrícula, acesse o <strong>Portal Capacita Aqui</strong> e realize a validação na aba “Validação Gestor/a”.</p>
                     <p>✨ Seu apoio faz a diferença!</p>
                     <p>Atenciosamente,</p>
                     
@@ -73,8 +82,30 @@
             </div>
         </main>
 
+        <main class="container-cancelamento card-adicional hidden" id="cartaoAdicional">
+    <header class="faixa-superior">
+        <div class="header-right">
+            <span class="logo-text">UniBB</span>
+            <img src="../logobb.png" alt="Logo BB" class="logo-img">
+        </div>
+        <h1>INFORMAÇÕES SOBRE O CURSO</h1>
+    </header>
+
+    <div class="conteudo-adicional">
+        <p id="informacoesAdicionaisSpan"></p>
+
+        <footer class="footer">
+            <div class="footer-linha-2">Gepes Especializada</div>
+            <div class="footer-linha-1">Educação e Seleção</div>
+        </footer>
+    </div>
+        </main>
+
         <aside class="email-container">
             <button id="btnImagem">Copiar e baixar imagem (.JPG)</button>
+            <button id="btnImagemAdicional" disabled>
+                Copiar e baixar card adicional (.JPG)
+            </button>
             <button id="btnCopiarEmail">Copiar texto do e-mail</button>
             <button id="btnEmail">Compartilhar por e-mail</button>
 
