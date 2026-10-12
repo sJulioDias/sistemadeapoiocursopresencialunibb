@@ -140,13 +140,14 @@ btnImagem.addEventListener("click", () => {
         document.body.removeChild(link);
 
         // COPIAR JPEG PARA A ÁREA DE TRANSFERÊNCIA
-        canvas.toBlob(blob => {
+            canvas.toBlob(blob => {
 
-            const item = new ClipboardItem({
-                "image/jpeg": blob
-            });
+                const item = new ClipboardItem({
+                    "image/png": blob
+                });
 
-            navigator.clipboard.write([item])
+                navigator.clipboard.write([item])
+
                 .then(() => {
 
                     const tamanhoKB = Math.round(blob.size / 1024);
@@ -163,7 +164,7 @@ btnImagem.addEventListener("click", () => {
                     alert("Imagem baixada, mas não foi possível copiá-la.");
                 });
 
-        }, "image/jpeg", 0.8);
+        }, "image/png");
 
     })
     .catch(err => {
