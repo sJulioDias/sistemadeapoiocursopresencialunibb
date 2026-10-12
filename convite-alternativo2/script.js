@@ -139,7 +139,7 @@ btnImagem.addEventListener("click", () => {
         link.click();
         document.body.removeChild(link);
 
-        // COPIAR JPEG PARA A ÁREA DE TRANSFERÊNCIA
+        // COPIAR PNG PARA A ÁREA DE TRANSFERÊNCIA
             canvas.toBlob(blob => {
 
                 const item = new ClipboardItem({
@@ -152,11 +152,11 @@ btnImagem.addEventListener("click", () => {
 
                     const tamanhoKB = Math.round(blob.size / 1024);
 
-                    alert(
-                        `Imagem baixada e copiada com sucesso!\n\n` +
-                        `Formato: JPG\n` +
-                        `Tamanho: ${tamanhoKB} KB`
-                    );
+                alert(
+                    "Imagem baixada e copiada com sucesso!\n\n" +
+                    "Arquivo baixado: JPG\n" +
+                    "Imagem copiada: PNG"
+                );
 
                 })
                 .catch(err => {
