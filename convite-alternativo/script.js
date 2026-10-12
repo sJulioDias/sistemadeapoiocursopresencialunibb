@@ -118,6 +118,7 @@ form.addEventListener("submit", (e) => {
 
 // BOTÃO PARA BAIXAR E COPIAR IMAGEM
 const btnImagem = document.getElementById("btnImagem");
+
 btnImagem.addEventListener("click", () => {
     const estiloAtual = window.getComputedStyle(cartao);
     const corDeFundo = estiloAtual.backgroundColor || estiloAtual.backgroundImage;
@@ -126,36 +127,53 @@ btnImagem.addEventListener("click", () => {
     htmlElement.style.scrollBehavior = "auto";
 
     html2canvas(cartao, {
-        scale: 2,
+        scale: 1.5,
         backgroundColor: corDeFundo,
         useCORS: true,
         logging: false
-    }).then(canvas => {
+    })
+    .then(canvas => {
         htmlElement.style.scrollBehavior = "smooth";
 
-        // --- DOWNLOAD ---
+        // DOWNLOAD EM JPEG
         const link = document.createElement("a");
-        link.download = "convite-unibb.png";
-        link.href = canvas.toDataURL("image/png");
+        link.download = "convite-unibb.jpg";
+        link.href = canvas.toDataURL("image/jpeg", 0.8);
+
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
 
-        // --- COPIAR PARA ÁREA DE TRANSFERÊNCIA ---
+        // COPIAR JPEG PARA A ÁREA DE TRANSFERÊNCIA
         canvas.toBlob(blob => {
-            const item = new ClipboardItem({ "image/png": blob });
+
+            const item = new ClipboardItem({
+                "image/jpeg": blob
+            });
+
             navigator.clipboard.write([item])
                 .then(() => {
-                    alert("Imagem baixada e copiada para a área de transferência!");
+
+                    const tamanhoKB = Math.round(blob.size / 1024);
+
+                    alert(
+                        `Imagem baixada e copiada com sucesso!\n\n` +
+                        `Formato: JPG\n` +
+                        `Tamanho: ${tamanhoKB} KB`
+                    );
+
                 })
                 .catch(err => {
-                    console.error("Erro ao copiar imagem: ", err);
-                    alert("Imagem baixada, mas não foi possível copiar.");
+                    console.error("Erro ao copiar imagem:", err);
+                    alert("Imagem baixada, mas não foi possível copiá-la.");
                 });
-        });
-    }).catch(err => {
-        console.error("Erro ao gerar imagem: ", err);
-        alert("Ocorreu um erro ao gerar e baixar a imagem.");
+
+        }, "image/jpeg", 0.8);
+
+    })
+    .catch(err => {
+        console.error("Erro ao gerar imagem:", err);
+        alert("Ocorreu um erro ao gerar a imagem.");
     });
 });
 
