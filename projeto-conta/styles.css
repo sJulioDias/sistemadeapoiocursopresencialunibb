@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #022c4a;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: #f6f632;
+    margin-bottom: 30px;
+}
+
+.acoes {
+    margin-bottom: 25px;
+}
+
+.botao {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.baixar {
+    background: #28a745;
+    color: white;
+}
+
+.baixar:hover {
+    background: #1f8135;
+}
+
+.voltar {
+    background: #f6f632;
+    color: #022c4a;
+}
+
+.voltar:hover {
+    background: #e4e414;
+}
+
+.imagem-orientacao {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #f6f632;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+
+    padding: 8px 12px;
+
+    border: 1px solid #f6f632;
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
+
+    background: rgba(2, 44, 74, 0.5);
+    z-index: 100;
+}
+
+.btn-voltar:hover {
+    background: #f6f632;
+    color: #022c4a;
+}
