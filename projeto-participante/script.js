@@ -38,6 +38,7 @@ form.addEventListener("submit", (e) => {
     const horario = value("horarioCurso");
     const endereco = value("enderecoSala");
     const cidadeUF = value("cidadeUF");
+    const codigoFip = value("codigoFip");
     const local = `${endereco} - ${cidadeUF}`;
     const prerequisito = selectPrereq.value === "sim" ? prerequisitoRaw : "";
     const deslocamentoAtivo = deslocamentoToggle.checked;
@@ -46,6 +47,7 @@ form.addEventListener("submit", (e) => {
     text("cursoData", data);
     text("cursoHorario", horario);
     text("cursoLocal", local);
+    text("cursoFip", codigoFip);
 
     if (selectPrereq.value === "sim" && prerequisito.trim()) {
         const elemento = document.getElementById("cursoPrerequisito");
@@ -63,7 +65,7 @@ form.addEventListener("submit", (e) => {
     }
 
     gerarEmail(curso, data, horario, local, prerequisito, cidadeUF);
-    gerarDescricao(curso, data, horario, local, prerequisito, deslocamentoAtivo);
+    gerarDescricao(curso, data, horario, local, prerequisito, deslocamentoAtivo, codigoFip);
 
     resultado.classList.remove("hidden");
     resultado.scrollIntoView({ behavior: "smooth" });
@@ -104,7 +106,7 @@ Confirmação de participação no curso ${curso} - ${data} - ${cidadeUF}
 `.trim();
 }
 
-function gerarDescricao(curso, data, horario, local, prereq, deslocamentoAtivo) {
+function gerarDescricao(curso, data, horario, local, prereq, deslocamentoAtivo, codigoFip) {
     const blocoPrereq = prereq ? `\n\nPré-requisitos: ${prereq}.` : "";
     const blocoDeslocamento = deslocamentoAtivo ? `
 Para os participantes que informaram previamente a necessidade de hospedagem:
@@ -127,7 +129,7 @@ Data: ${data}
 Horário: ${horario}
 Local: ${local}${blocoPrereq}
 ${blocoDeslocamento}
-Situação FIP/ Ponto Eletrônico: 27X, onde X é o número de horas de treinamento no dia.
+Situação FIP/ Ponto Eletrônico: ${codigoFip}.
 Obrigatório o uso de crachá e orientamos levar seu copo para consumo de café e garrafa ou copo para consumo de água.
 Ausências sem justificativa serão tratadas como Desvio de Comportamento, nos termos da IN 383-1, item 4.
 
