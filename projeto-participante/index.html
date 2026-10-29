@@ -37,6 +37,12 @@
             <input type="text" id="cidadeUF" required />
         </label>
 
+                <label>
+                Código FIP
+                <input
+                    type="text" id="codigoFip" value="27X (X é o n° horas de treinamento no dia)" required/>
+                </label>
+
         <label>
             O curso possui pré‑requisitos?
             <select id="temPrerequisito">
@@ -101,7 +107,10 @@
             </section>
 
             <section class="box alert">
-                <p>Situação FIP/Ponto: 27X, onde X é a quantidade de horas de treinamento no dia.</p>
+                <p>
+                    Situação FIP/Ponto:
+                    <span id="cursoFip"></span>
+                </p>
                 <p>Obrigatório o <span class="destaque">uso de crachá</span> e orientamos levar seu 
                 <span class="destaque">copo</span> para consumo de café e 
                 <span class="destaque">garrafa ou copo</span> para consumo de água.</p>
