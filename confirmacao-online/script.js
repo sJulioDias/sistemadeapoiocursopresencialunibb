@@ -33,12 +33,14 @@ form.addEventListener("submit", (e) => {
     const data = value("dataCurso");
     const horario = value("horarioCurso");
     const local = value("localCurso");
+    const codigoFip = value("codigoFip");
     const prerequisito = selectPrereq.value === "sim" ? prerequisitoRaw : "";
 
     text("cursoTitulo", curso);
     text("cursoData", data);
     text("cursoHorario", horario);
     text("cursoLocal", local);
+    text("cursoFip", codigoFip);
 
     if (selectPrereq.value === "sim" && prerequisito.trim()) {
         const elemento = document.getElementById("cursoPrerequisito");
@@ -49,7 +51,7 @@ form.addEventListener("submit", (e) => {
     }
 
     gerarEmail(curso, data, horario, local, prerequisito);
-    gerarDescricao(curso, data, horario, local, prerequisito);
+    gerarDescricao(curso, data, horario, local, prerequisito, codigoFip);
 
     resultado.classList.remove("hidden");
     resultado.scrollIntoView({ behavior: "smooth" });
@@ -88,7 +90,7 @@ Confirmação de participação no curso ${curso} - ${data} - ${local}
 `.trim();
 }
 
-function gerarDescricao(curso, data, horario, local, prereq) {
+function gerarDescricao(curso, data, horario, local, prereq, codigoFip) {
     const blocoPrereq = prereq ? `\n\nPré-requisitos: ${prereq}.` : "";
 
     document.getElementById("descricaoImagem").value = `
@@ -102,7 +104,7 @@ Sua participação no curso "${curso}" está confirmada.
 Data: ${data}
 Horário: ${horario}
 Local: ${local}${blocoPrereq}
-Situação FIP/ Ponto Eletrônico: 27X, onde X é o número de horas de treinamento no dia.
+Situação FIP/ Ponto Eletrônico: ${codigoFip}.
 
 ATENÇÃO!
 É necessário que você se conecte com antecedência ao horário previsto para o início, evitando atrasos para começar o curso;
