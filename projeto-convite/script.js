@@ -66,7 +66,7 @@ form.addEventListener("submit", (e) => {
     const localConcatenado = `${enderecoSala} - ${cidadeUf}`;
 
     // --- Código FIP padrão ---
-    const codigoFip = "27X (onde X é a quantidade de horas de treinamento no dia)";
+    const codigoFip = value("codigoFip");
 
     // Preenche os campos do cartão
     document.getElementById("cursoSpan").textContent = curso;
@@ -79,7 +79,7 @@ form.addEventListener("submit", (e) => {
     <span class="label">Data:</span> ${formatarDataISOparaBR(dataInicio)} a ${formatarDataISOparaBR(dataFim)}
     <span class="label">Horário:</span> ${horario}
     <span class="label">Local:</span> ${localConcatenado}
-    <span class="label">Código FIP:</span> ${codigoFip}`;
+    <span class="label">Situação FIP/Ponto:</span> ${codigoFip}`;
 
     if (selectPrereq.value === "sim" && prerequisito.trim()) {
         infoHTML += `\n<span class="label">Pré‑requisitos:</span><br>${prerequisito}`;
