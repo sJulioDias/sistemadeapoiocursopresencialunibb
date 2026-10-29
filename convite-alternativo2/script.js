@@ -62,7 +62,7 @@ form.addEventListener("submit", (e) => {
     }
 
     // --- Código FIP padrão ---
-    const codigoFip = "27X (onde X é a quantidade de horas de treinamento no dia)";
+    const codigoFip = value("codigoFip");
 
     // Preenche os campos de texto do cartão
     document.getElementById("cursoSpan").textContent = curso;
@@ -73,7 +73,7 @@ form.addEventListener("submit", (e) => {
     let infoHTML = `
         <div class="info-box-left">
             <strong>Horário:</strong><br>${horario}<br>
-            <strong>FIP:</strong> ${codigoFip}
+            <strong>Situação FIP/Ponto:</strong> ${codigoFip}
         </div>
         <div class="date-badge">
             <div class="date-main">${formatarDataISOparaBR(dataInicio).substring(0, 5)} a ${formatarDataISOparaBR(dataFim).substring(0, 5)}</div>
