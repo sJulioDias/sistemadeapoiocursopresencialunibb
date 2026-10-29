@@ -33,6 +33,12 @@
         </label>
 
         <label>
+            Código FIP
+                <input
+                    type="text" id="codigoFip" value="27X (X é o n° horas de treinamento no dia)" required/>
+        </label>
+
+        <label>
             O curso possui pré‑requisitos?
             <select id="temPrerequisito">
                 <option value="nao">Não</option>
@@ -82,7 +88,10 @@
             <!-- LOCAL EM BOX SEPARADO -->
             <section class="box info">
                 <p><strong>LOCAL:</strong> <span id="cursoLocal"></span></p>
-                <p><strong>SITUAÇÃO FIP/PONTO ELETRÔNICO:</strong> 27X, onde X é a quantidade de horas de treinamento no dia.</p>
+                <p>
+                    <strong>SITUAÇÃO FIP/PONTO ELETRÔNICO:</strong>
+                    <span id="cursoFip"></span>
+                </p>
             </section>
 
             <!-- ✅ PRÉ‑REQUISITOS EM SEÇÃO PRÓPRIA -->
