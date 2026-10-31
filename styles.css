@@ -247,3 +247,11 @@ footer p {
   background: #1565c0 !important;
 }
 
+#sidebar ul li strong {
+  display: block;
+  padding: 15px 25px 5px;
+  color: #f6f632;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
