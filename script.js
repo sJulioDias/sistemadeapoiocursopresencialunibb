@@ -36,3 +36,54 @@ function mostrarSecao(secao) {
 document.addEventListener("DOMContentLoaded", () => {
   mostrarSecao('convite');
 });
+
+function filtrarCardsGlobal() {
+
+  const termo = document
+    .getElementById("campoBusca")
+    .value
+    .toLowerCase()
+    .trim();
+
+  const secoes = document.querySelectorAll(".card-section");
+
+  if (termo === "") {
+
+    // Restaura todos os cards
+    document.querySelectorAll(".card").forEach(card => {
+      card.style.display = "flex";
+    });
+
+    // Oculta todas as seções
+    secoes.forEach(secao => {
+      secao.style.display = "none";
+    });
+
+    // Exibe novamente a seção padrão
+    mostrarSecao("convite");
+
+    return;
+  }
+
+  secoes.forEach(secao => {
+
+    const cards = secao.querySelectorAll(".card");
+    let encontrou = false;
+
+    cards.forEach(card => {
+
+      const texto = card.textContent.toLowerCase();
+
+      if (texto.includes(termo)) {
+        card.style.display = "flex";
+        encontrou = true;
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+    secao.style.display = encontrou ? "flex" : "none";
+
+  });
+}
