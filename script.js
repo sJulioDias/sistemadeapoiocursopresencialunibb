@@ -26,10 +26,28 @@ document.addEventListener("click", (event) => {
 
 // Função para mostrar apenas a seção escolhida
 function mostrarSecao(secao) {
+
+  // Esconde todas as seções
   document.querySelectorAll('.card-section').forEach(div => {
     div.style.display = 'none';
   });
+
+  // Remove destaque de todos os botões
+  document.querySelectorAll('.menu-secoes button').forEach(btn => {
+    btn.classList.remove('ativo');
+  });
+
+  // Mostra a seção selecionada
   document.getElementById(secao).style.display = 'flex';
+
+  // Destaca o botão correspondente
+  const botaoAtivo = document.querySelector(
+    `.menu-secoes button[onclick="mostrarSecao('${secao}')"]`
+  );
+
+  if (botaoAtivo) {
+    botaoAtivo.classList.add('ativo');
+  }
 }
 
 // Exibir "Convite" por padrão ao carregar a página
