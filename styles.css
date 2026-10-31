@@ -255,3 +255,29 @@ footer p {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+.area-busca {
+    margin-left: 250px;
+    padding: 130px 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#campoBusca {
+    width: 500px;
+    max-width: 90%;
+    padding: 16px 20px;
+    border-radius: 30px;
+    border: 2px solid #f6f632;
+    font-size: 1rem;
+    background: white;
+}
+
+.card-section {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px 20px 40px;
+  margin-left: 250px;
+}
