@@ -32,6 +32,7 @@ form.addEventListener("submit", (e) => {
 
     const nome = value("nome");
     const curso = value("curso");
+    const modalidade = value("modalidade");
     const dia = value("dia");
     const diaPrevio = value("diaPrevio");
     const datasEvento = value("datasEvento");
@@ -45,16 +46,17 @@ form.addEventListener("submit", (e) => {
     // Preenche os campos do cartão com datas formatadas
     text("nomeSpan", nome);
     text("cursoSpan", curso);
+    text("modalidadeSpan", modalidade);
     text("diaSpan", formatarDataISOparaBR(dia));
     text("cursoBox", curso);
-    text("diaPrevioBox", formatarDataISOparaBR(diaPrevio));
+    text("diaPrevioBox", diaPrevio);
     text("datasEventoBox", datasEvento);
     text("localEventoBox", localConcatenado);
     text("codigoFipBox", codigoFip);
 
     // Gera conteúdo de e-mail e descrição acessível
     gerarEmail(curso, formatarDataISOparaBR(dia), datasEvento, localConcatenado, codigoFip, cidadeUf);
-    gerarDescricao(nome, curso, formatarDataISOparaBR(dia), formatarDataISOparaBR(diaPrevio), datasEvento, localConcatenado, codigoFip);
+    gerarDescricao(nome, curso, modalidade, formatarDataISOparaBR(dia), diaPrevio, datasEvento, localConcatenado, codigoFip);
 
     resultado.classList.remove("hidden");
     resultado.scrollIntoView({ behavior: "smooth" });
@@ -103,10 +105,10 @@ btnCopiarEmail.addEventListener("click", () => {
 // BOTÃO PARA ALTERAR COR DO CARTÃO
 const btnAlterarCor = document.getElementById("btnAlterarCor");
 const cores = [
-    "linear-gradient(160deg, #2c3e50, #000000)", 
-    "linear-gradient(160deg, #102a43, #243b55)", 
-    "linear-gradient(160deg, #0d324d, #1c1c1c)", 
-    "linear-gradient(160deg, #3333BD, #212194)"  
+    "linear-gradient(160deg, #062f4f, #04324f)", 
+    "linear-gradient(160deg, #735CC6, #5741a5)",
+    "linear-gradient(160deg, #FF6E91, #de4b6d)",
+    "linear-gradient(160deg, #3333BD, #212194)"
 ];
 let indiceCor = 0;
 
@@ -134,14 +136,24 @@ function gerarEmail(curso, dia, datasEvento, localConcatenado, codigoFip, cidade
 }
 
 // FUNÇÃO PARA GERAR DESCRIÇÃO DA IMAGEM (ACESSIBILIDADE)
-function gerarDescricao(nome, curso, dia, diaPrevio, datasEvento, localConcatenado, codigoFip) {
+function gerarDescricao(
+    nome,
+    curso,
+    modalidade,
+    dia,
+    diaPrevio,
+    datasEvento,
+    localConcatenado,
+    codigoFip
+) {
     let descricao = `
 #Paratodosverem
 Cartão digital na cor azul e logotipo da UniBB em amarelo. Possui as informações de curso e instruções.
 
 Olá, ${nome}!
 
-Recebemos sua manifestação de interesse e validamos sua atuação como educador/a titular no curso "${curso}".
+Recebemos sua manifestação de interesse e validamos sua atuação como educador/a titular no curso "${curso}", modalidade ${modalidade}.
+
 A autorização da atuação deve ser liberada pelo/a Gestor/a no Portal Capacita Aqui, aba Validação Gestor/a.
 
 Dia limite para autorização: ${dia}
