@@ -162,9 +162,9 @@ const btnAlterarCor = document.getElementById("btnAlterarCor");
 const cartao = document.getElementById("cartao");
 
 const cores = [
-    "linear-gradient(160deg, #2c3e50, #000000)", // Grafite
-    "linear-gradient(160deg, #102a43, #243b55)", // Marinho
-    "linear-gradient(160deg, #0d324d, #1c1c1c)", // Petróleo
+    "linear-gradient(160deg, #062f4f, #04324f)", 
+    "linear-gradient(160deg, #735CC6, #5741a5)",
+    "linear-gradient(160deg, #FF6E91, #de4b6d)",
     "linear-gradient(160deg, #3333BD, #212194)"
 ];
 
