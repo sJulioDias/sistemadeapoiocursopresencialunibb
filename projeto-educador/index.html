@@ -18,8 +18,16 @@
         </label>
 
         <label>
-            Curso
-            <input type="text" id="curso" placeholder="Ex: Oficina DE&I Aprendizagem" required />
+            Curso - Cód. Educa
+            <input type="text" id="curso" placeholder="Ex: Oficina DE&I Aprendizagem - Cód.12214" required />
+        </label>
+
+        <label>
+            Modalidade
+            <select id="modalidade" required>
+                <option value="presencial" selected>Presencial</option>
+                <option value="online">Online</option>
+            </select>
         </label>
 
         <label>
@@ -29,7 +37,8 @@
 
         <label>
             Dia prévio
-            <input type="date" id="diaPrevio" required />
+            <input
+                type="text" id="diaPrevio" placeholder="Ex: 09/03/2026 de 09h às 18h" required />
         </label>
 
         <label>
@@ -82,7 +91,7 @@
 
             <p>
                 Recebemos sua manifestação de interesse e validamos sua atuação como educador/a titular no curso
-                <strong id="cursoSpan"></strong> – modalidade presencial, conforme dados abaixo.
+                <strong id="cursoSpan"></strong> – modalidade <span id="modalidadeSpan"></span>, conforme dados abaixo.
             </p>
 
             <p>
