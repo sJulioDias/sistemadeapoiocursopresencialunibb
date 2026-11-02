@@ -225,15 +225,6 @@ footer p {
   margin: 0;
 }
 
-.btn-informativo {
-  background: #1e88e5 !important;
-  color: white !important;
-}
-
-.btn-informativo:hover {
-  background: #1565c0 !important;
-}
-
 #sidebar ul li strong {
   display: block;
   padding: 15px 25px 5px;
@@ -276,11 +267,4 @@ footer p {
   border: 3px solid #f6f632;
   box-shadow: none;
   transform: translateX(8px);
-}
-
-/* Informativo ativo preservando a identidade visual */
-.menu-secoes button.btn-informativo.ativo {
-  background: #0d47a1 !important;
-  color: white !important;
-  border: 3px solid #f6f632;
 }
