@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerador de Comunicados UniBB</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="painel">
+
+        <h2>Gerador de Comunicado</h2>
+
+        <div class="campo">
+            <label>Título</label>
+            <input
+                type="text"
+                id="titulo"
+                value="COMUNICADO">
+        </div>
+
+        <div class="campo">
+
+            <label>Parágrafo 1</label>
+
+            <textarea id="paragrafo1" rows="10">Prezado(a) colega,
+
+Informamos que o evento <strong>xxxxxxx</strong>, previsto para o período de <strong>xx a xxxx</strong>, em <strong>xxxxx/XX</strong>, foi <span class="destaque-amarelo">cancelado.</span>
+
+Reconhecemos que essa alteração pode gerar impactos em seu planejamento e lamentamos eventuais transtornos.</textarea>
+
+        <div class="toolbar">
+
+            <button
+                type="button"
+                class="toolbar-btn"
+                onclick="aplicarTag('paragrafo1','strong')">
+                <b>N</b> Negrito
+            </button>
+
+            <button
+                type="button"
+                class="toolbar-btn"
+                onclick="aplicarDestaque('paragrafo1')">
+                🟨 Destaque
+            </button>
+
+            <button
+                type="button"
+                class="toolbar-btn"
+                onclick="removerFormatacao('paragrafo1')">
+                🧹 Limpar
+            </button>
+
+        </div>
+
+        </div>
+
+        <div class="campo">
+
+            <label>Parágrafo 2</label>
+
+            <textarea id="paragrafo2" rows="6">Recomendamos acompanhar o <strong>Portal Capacita Aí</strong>, onde novas turmas e oportunidades de capacitação serão divulgadas oportunamente.</textarea>
+
+            <div class="toolbar">
+
+                <button
+                    type="button"
+                    class="toolbar-btn"
+                    onclick="aplicarTag('paragrafo2','strong')">
+                    <b>N</b> Negrito
+                </button>
+
+                <button
+                    type="button"
+                    class="toolbar-btn"
+                    onclick="aplicarDestaque('paragrafo2')">
+                    🟨 Destaque
+                </button>
+
+                <button
+                    type="button"
+                    class="toolbar-btn"
+                    onclick="removerFormatacao('paragrafo2')">
+                    🧹 Limpar
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="campo">
+
+            <label>Parágrafo 3</label>
+
+            <textarea id="paragrafo3" rows="6">Agradecemos sua compreensão e permanecemos à disposição para quaisquer esclarecimentos.
+
+Atenciosamente,</textarea>
+
+            <div class="toolbar">
+
+                <button
+                    type="button"
+                    class="toolbar-btn"
+                    onclick="aplicarTag('paragrafo3','strong')">
+                    <b>N</b> Negrito
+                </button>
+
+                <button
+                    type="button"
+                    class="toolbar-btn"
+                    onclick="aplicarDestaque('paragrafo3')">
+                    🟨 Destaque
+                </button>
+
+                <button
+                    type="button"
+                    class="toolbar-btn"
+                    onclick="removerFormatacao('paragrafo3')">
+                    🧹 Limpar
+                </button>
+
+            </div>
+
+        </div>
+
+        <button
+            id="btnAlterarCor"
+            type="button">
+            🎨 Alterar Cor
+        </button>
+
+        <button
+            type="button"
+            onclick="gerarPraTodosVerem()">
+            ♿ Gerar #PraTodosVerem
+        </button>
+
+        <button
+            type="button"
+            onclick="exportarPNG()">
+            📥 Baixar imagem (PNG)
+        </button>
+
+        <div class="campo" style="margin-top:20px;">
+
+            <label>#PraTodosVerem</label>
+
+            <textarea
+                id="praTodosVerem"
+                rows="10"
+                readonly></textarea>
+
+        </div>
+
+    </div>
+
+    <div class="card" id="cardExport">
+
+        <div class="header">
+
+            <div class="header-right">
+                <span class="logo-text">UniBB</span>
+                <img
+                    src="../logobb.png"
+                    alt="Logo BB"
+                    class="logo-img">
+            </div>
+
+            <h1 id="previewTitulo">
+                COMUNICADO
+            </h1>
+
+        </div>
+
+        <div class="conteudo">
+
+            <div id="previewParagrafo1">
+                Prezado(a) colega,
+                <br><br>
+
+                Informamos que o evento <strong>xxxxxxx</strong>,
+                previsto para o período de <strong>xx a xxxx</strong>,
+                em <strong>xxxxx/XX</strong>,
+                foi <span class="destaque-amarelo">cancelado.</span>
+
+                <br><br>
+
+                Reconhecemos que essa alteração pode gerar impactos
+                em seu planejamento e lamentamos eventuais transtornos.
+            </div>
+
+            <div class="portal" id="previewParagrafo2">
+                Recomendamos acompanhar o
+                <strong>Portal Capacita Aí</strong>,
+                onde novas turmas e oportunidades de capacitação
+                serão divulgadas oportunamente.
+            </div>
+
+            <div id="previewParagrafo3">
+
+                Agradecemos sua compreensão e permanecemos
+                à disposição para quaisquer esclarecimentos.
+
+                <br><br>
+
+                Atenciosamente,
+
+            </div>
+
+            <footer class="footer">
+
+                <div class="footer-linha-2">
+                    Gepes Especializada
+                </div>
+
+                <div class="footer-linha-1">
+                    Educação e Seleção
+                </div>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
