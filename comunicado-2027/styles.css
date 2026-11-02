@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'Banco';
+    src: url(../BancoDoBrasilTextos-Regular.ttf) format('truetype');
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Banco', Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f1f4f9;
+    padding:30px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:400px 1fr;
+    gap:30px;
+    align-items:start;
+}
+
+.painel{
+    background:#fff;
+    padding:24px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    border-radius:16px;
+    height:fit-content;
+}
+
+.painel h2{
+    color:#003b8f;
+    margin-bottom:20px;
+}
+
+.campo{
+    margin-bottom:16px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:600;
+    color:#173b70;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:14px;
+}
+
+textarea{
+    resize:vertical;
+    min-height:120px;
+    line-height:1.5;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#003b8f;
+    box-shadow:0 0 0 3px rgba(0,59,143,.12);
+}
+
+button{
+    width:100%;
+    border:none;
+    cursor:pointer;
+    background:#003b8f;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    margin-top:10px;
+    transition:.2s;
+}
+
+button:hover{
+    background:#002b66;
+}
+
+/* CARD */
+
+.card{
+    background:linear-gradient(135deg,#0048c9,#002f87);
+    overflow:hidden;
+    color:white;
+    width:800px;
+}
+
+.header{
+    background:#002f87;
+    margin:30px;
+    border-radius:16px;
+    text-align:center;
+    padding:25px;
+}
+
+.header h1{
+    font-size:40px;
+    color:#f6f632;
+    word-break:break-word;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:6px;
+    margin-bottom:10px;
+}
+
+.logo-text{
+    font-weight:bold;
+    font-size:25px;
+    color:#f6f632;
+}
+
+.logo-img{
+    width:20px;
+    height:auto;
+}
+
+.conteudo{
+    background:white;
+    color:#173b70;
+    border-radius:30px;
+    margin:30px;
+    padding:50px;
+}
+
+.conteudo p{
+    font-size:24px;
+    line-height:1.5;
+    margin-bottom:24px;
+}
+
+#previewParagrafo1,
+#previewParagrafo2,
+#previewParagrafo3{
+    font-size:24px;
+    line-height:1.5;
+}
+
+#previewParagrafo1{
+    margin-bottom:24px;
+}
+
+#previewParagrafo3{
+    margin-top:24px;
+}
+
+.conteudo strong{
+    color:#003b8f;
+    font-weight:700;
+}
+
+.portal{
+    background:var(--cor-portal, #eef5ff);
+    padding:30px;
+    border-radius:20px;
+    margin:30px 0;
+}
+
+/* RODAPÉ */
+
+.footer{
+    text-align:center;
+    margin-top:30px;
+    line-height:1.2;
+}
+
+.footer-linha-2{
+    color:#173b70;
+    font-weight:bold;
+    font-size:24px;
+}
+
+.footer-linha-1{
+    color:#173b70;
+    font-weight:bold;
+    font-size:24px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1200px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        width:100%;
+    }
+
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .conteudo{
+        padding:30px;
+        margin:15px;
+    }
+
+    .conteudo p,
+    #previewParagrafo1,
+    #previewParagrafo2,
+    #previewParagrafo3{
+        font-size:18px;
+    }
+
+    .header h1{
+        font-size:28px;
+    }
+
+}
+
+.toolbar{
+    display:flex;
+    gap:8px;
+    margin-bottom:8px;
+}
+
+.toolbar-btn{
+    width:auto;
+    margin-top:0;
+    padding:8px 14px;
+    font-size:14px;
+    border-radius:8px;
+}
+
+.destaque-amarelo{
+    background:var(--cor-destaque, #f6f632);
+    color:#003b8f;
+    padding:2px 6px;
+    border-radius:6px;
+    font-weight:bold;
+}
