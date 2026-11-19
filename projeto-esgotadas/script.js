@@ -81,7 +81,7 @@ Cartão digital de comunicado de cor azul claro, com faixa superior azul contend
 
 Olá, Colega!
 
-Recebemos a sua inscrição para o curso "${curso}", que irá ocorrer na cidade de ${cidadeUf} de ${periodo}.
+Recebemos a sua inscrição para o curso "${curso}" - ${cidadeUf} previsto para ${periodo}.
           
 Infelizmente, as vagas para esse evento já foram preenchidas. Seu nome ficará em uma lista de espera e caso haja desistências entraremos em contato.
 
